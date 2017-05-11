@@ -33,6 +33,6 @@ suggestion would be studying your old text book!
 
 ## Resources
 
-* Syllabus[SYLLABUS.md]
+* [Syllabus](SYLLABUS.md)
 * Classroom chat room[]
 
