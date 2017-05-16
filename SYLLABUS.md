@@ -2,8 +2,14 @@
 
 ## Course Overview
 
-- **Objective** Learning full-stack web programming in Java Servlet, JSP, HTML, CSS & JavaScript.
-- **Expectation** Students are expected to have Java programming background. In addition, students are expected to devote a large amount of time learning how to implement algorithms learned in class.
+### Objective
+
+Learning full-stack web programming in HTML, CSS, JavaScript & Java.
+
+### Expectation
+Students are expected to have strong Java programming background. 
+In addition, students are expected to devote a large amount of time learning 
+how to implement techniques learned in class.
 
 ## Logistics
 
@@ -18,19 +24,20 @@
 
 * Git/Github
 * HTML & CSS
-* Basic JavaScript
+* JavaScript
 * Java Servlet
 * JSP (Java Servlet Page) & JSTL
 * MySQL
+* Vue.js
+* Spring Boot
 
 ## Grading Allocation
 
-1. Labs (8) 40 pts
-2. Homework (4) 40 pts
-3. Final 20 pts
-4. Attendance 5 pts
-
-**Final Project** Homework assignments culminate in a final project: a complete application/game that utilizes the web programming. **Successful completion of the course project is a requirement for passing this course.**
+* Labs (8) 40 pts
+* Homework (4) 40 pts
+* Midterm 10 pts
+* Final 10 pts
+* Attendance 5 pts
 
 ## Grading Scale
 
@@ -46,11 +53,14 @@
 
 ## ADA Statement
 
-Reasonable accommodation will be provided to any student who is registered with the Office of Students with Disabilities and requests needed accommodation.
+Reasonable accommodation will be provided to any student who is registered with
+the Office of Students with Disabilities and requests needed accommodation.
 
 ## Academic Integrity
 
-Cheating on assignments and exams will not be tolerated. All parties involved will receive a grade of **F** for the course and be reported to the Computer Science Department.
+Cheating on assignments and exams will not be tolerated. All parties involved
+will receive a grade of **F** for the course and be reported to the Computer 
+Science Department.
 
 ## Course Schedule
 
@@ -62,24 +72,24 @@ The schedule below is tentative and is subject to change.
 | 2  [06/03]         | [HTML & CSS][2] | [Lab 1][16] |
 | 3  [06/10]         | [Intro to JavaScript][3] | [Lab 2][17] |
 | 4  [06/17]         | [Java Servlet][4] | [Lab 3][18], [Homework 1][12] |
-| 5  [06/24]         | [JSP & JSTL][5] | [Lab 4][19] |
-| 6  [07/01]         | [MVC Architecture][6] | [Lab 5][20] [Homework 2][13] |
-| 7  [07/08]         | [RESTful Services][7] | [Lab 6][21] |
-| 8  [07/15]         | [Jersey/Spring Boot][8] | [Homework 3][14] |
-| 9  [07/22]         | [Front end framework -- Angular/Vue/React][9] | [Lab 7][22] |
-| 10 [07/29]         | [Modern web][10] | [Lab 8][23], [Homework 4][15] |
+| 5  [06/24]         | [Midtern][5] | [Lab 4][19] |
+| 6  [07/01]         | [JSP & JSTL][6] | [Lab 5][20] [Homework 2][13] |
+| 7  [07/08]         | [Database][7] | [Lab 6][21] |
+| 8  [07/15]         | [Web architectures][8] | [Homework 3][14] |
+| 9  [07/22]         | [Front end framework][9] | [Lab 7][22] |
+| 10 [07/29]         | [Modern Java Web framework][10] | [Lab 8][23], [Homework 4][15] |
 | Final [08/12]      | [Final][11] | Similar to lab, due in class |
 
 [1]: notes/introduction.md
 [2]: notes/html_css.md
 [3]: notes/javascript.md
-[4]: notes/java-servlet.md
-[5]: notes/jsp_jstl.md
-[6]: notes/mvc.md
-[7]: notes/restul_service.md
-[8]: notes/spring_boot.md
+[4]: notes/java_servlet.md
+[5]: notes/midterm.md
+[6]: notes/jsp_jstl.md
+[7]: notes/database.md
+[8]: notes/web_architectures.md
 [9]: notes/front_end_framework.md
-[10]: notes/modern_web.md
+[10]: notes/modern_java_web.md
 [11]: notes/final.md
 [12]: notes/homeworks/homework1.md
 [13]: notes/homeworks/homework2.md
