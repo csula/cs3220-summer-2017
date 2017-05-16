@@ -6,6 +6,7 @@
 
 * Syllabus
 * Course overview
+* Suggested development environment
 * Basic HTML & CSS
 
 > Detail HTML & CSS to come next week
@@ -14,5 +15,6 @@
 
 * Java set up
 * Git/Github set up
-* Set up your environment
+* Development environment
 * Github page
+

@@ -33,9 +33,15 @@ suggestion would be studying your old text book!
 
 ## Resources
 
+### Class
+
 * [Syllabus](SYLLABUS.md)
 * Classroom chat room[]
 
+### Recommended reading
+
+* [How to ask question by me](https://github.com/csula/Utilities/blob/master/general-knowledge/how-to-ask-question.md)
+* [Clean architecure by Uncle Bob](http://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 * [System design primer](https://github.com/donnemartin/system-design-primer)
 * [Developer Roadmap](https://github.com/kamranahmedse/developer-roadmap)
 
