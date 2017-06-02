@@ -66,7 +66,7 @@ overall architecture for web applications.
 At top level, we can split web applications into simplest three layers -- front-end,
 back-end & database.
 
-**Why is it these three?**
+**Why these three matters?**
 
 Most of time, you will run your web applications across different machines based
 on these three layers. Front-end is usually running on the customers' environment
@@ -76,10 +76,11 @@ is usually running on some sort of servers (whether it's on the cloud or some
 machines). Since the user doesn't interact with the server directly, it means you
 have a lot more control on the server and allows you to do many different things,
 including security related stuff and so on. While the database is usually 
-separated from the back-end due to the fact you want data to be available 
-regardless of the server state. In example, you may restart your web server for
-deployment and you definitely don't want to lose data because you shut down the
-server.
+separated from the back-end, due to the fact you want data to be available 
+regardless of the server state. In example, there may be times you absolutely need
+to restart your application server like deployment. If data is all stored in memory
+on the back-end server, data will be **lost** when back-end server restarts.
+Therefore, it is necessary to ensure the data lives in different server.
 
 In short, these three are the simplest layers in web application architecture 
 because they are usually running on different environment. Thus, they each serves
