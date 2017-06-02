@@ -44,4 +44,4 @@ suggestion would be studying your old text book!
 * [Clean architecure by Uncle Bob](http://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 * [System design primer](https://github.com/donnemartin/system-design-primer)
 * [Developer Roadmap](https://github.com/kamranahmedse/developer-roadmap)
-
+* https://www.youtube.com/watch?time_continue=114&v=sBzRwzY7G-k
