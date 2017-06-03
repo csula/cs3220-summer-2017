@@ -2,12 +2,15 @@
 
 ## Deliverables
 
+* Button component (styled)
+* Table component (styled)
+* Form component (styled)
 * Submit Github pages URL to CSNS under exercise
 
 ## Note to students
 
 Since this is the first week and first very lab, we will do a practice exercise
-to get students ready for actual lab. Even though this lab is non-graded, I 
+to get you ready for the actual lab. Even though this lab is non-graded, I 
 strongly recommend you to finish this lab.
 
 ## Description

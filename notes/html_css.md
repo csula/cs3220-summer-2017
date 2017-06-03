@@ -8,6 +8,7 @@
 * CSS Selector
 * CSS Syntax
 * CSS Variables
+* DOM
 * Responsive design
 * CSS Frameworks
 

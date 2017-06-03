@@ -376,7 +376,7 @@ https://classroom.github.com/assignment-invitations/2f6346dbfa2062c422938b850dc2
 
 And here is the exercise 1 link:
 
-[Exercise 1](../exercises/exercise.md)
+[Exercise 1](exercises/exercise.md)
 
 [1]:https://github.com/kamranahmedse/developer-roadmap
 [2]:https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol
