@@ -36,7 +36,10 @@ suggestion would be studying your old text book!
 ### Class
 
 * [Syllabus](SYLLABUS.md)
-* Classroom chat room[]
+* [Classroom chat room](https://csulacs3220summer2017.slack.com/)
+
+> If you don't have access to the chat room, please ask me in person because I
+will have to send you an invitation.
 
 ### Recommended reading
 
