@@ -4,9 +4,10 @@
 
 ### Objective
 
-Learning full-stack web programming in HTML, CSS, JavaScript & Java.
+Learning full-stack web development in HTML, CSS, JavaScript & Java.
 
 ### Expectation
+
 Students are expected to have strong Java programming background. 
 In addition, students are expected to devote a large amount of time learning 
 how to implement techniques learned in class.
@@ -26,7 +27,7 @@ how to implement techniques learned in class.
 * HTML & CSS
 * JavaScript
 * Java Servlet
-* JSP (Java Servlet Page) & JSTL
+* JSP & JSTL
 * MySQL
 * Vue.js
 * Java Jersey framework
@@ -56,9 +57,16 @@ how to implement techniques learned in class.
 In lab, everything is open (books, notes, internet, friends, colleagues). In other word,
 you are free to ask for helps in order to finish the lab in time.
 
+> Please note the difference between helping and giving out solution. Copying
+others' solution is considered as cheating.
+
+> If you are not sure what is helping. Consider yourself as a mentor for other
+students. You are helping them by **teaching** them. While teaching, hopefully,
+you can learn some from it as well!
+
 There is only one rule to the lab -- all lab works are due in class unless notify otherwise.
-All the requirements to the lab will be given in class, and lab work will be due by the end
-of class.
+All the requirements of the lab will be given in class, and the lab work will be 
+due by the end of class.
 
 ## Midterm/final rules
 
@@ -67,12 +75,13 @@ Rules for midterm & final are very similar to lab --
 * Open book/note
 * Open internet
 * All works are due in class
-* You may ask question to clarify if you are not clear what question is
+* You may ask question to clarify if you are not clear
 
 Except the following difference:
 
 * No discussion/IMs with your friends&colleagues
-* Not like lab, I will noe be helping you out in midterm&final
+	* Midterm&final is supposed to be testing individuals
+* Not like lab, I will not be as helpful
 
 ## ADA Statement
 

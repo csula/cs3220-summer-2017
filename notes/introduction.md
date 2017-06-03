@@ -17,6 +17,7 @@
 * Java set up
 * Git/Github set up
 * Development environment
+* Student repository setup
 * Deploy Components to Github page
 
 
@@ -85,6 +86,43 @@ Therefore, it is necessary to ensure the data lives in different server.
 In short, these three are the simplest layers in web application architecture 
 because they are usually running on different environment. Thus, they each serves
 different purposes and are designed differently.
+
+**Detailed components**
+
+HTML represents the content on the screen while CSS address the presentation 
+changes like styling. In example, you have have a `h1` tag with content like
+`hello world`. But without the CSS, you will have a very plain output displayed
+in the browser. With CSS, you can make this `h1` tag to have a different color,
+font-size or even position differently.
+
+JavaScript on the other hand adds up the functionalities on top of HTML & CSS.
+Consider example like a `button` in your page, button by itself when you click
+it may not accomplish anything. However, with the code below:
+
+```html
+<button>Click me</button>
+```
+
+You may add JavaScript **on click** functionalities to do something like ...
+bring up a modal window!!
+
+```js
+button.addEventListener('click', () => {
+	alert('Hello there!');
+});
+```
+
+On the back end, you have router to determine which controller to call. In
+example, you may have a router that takes URL like
+`GET /api/v1/restaurants/menu` to call menu system.
+
+And then on the menu controller you may start by doing validation first. After
+validating request is valid, you can start sending the request to the database.
+
+In the database access layer, you will be constructing SQL queries to create/update
+data in the database.
+
+Finally, in the database, you can store all the information safely!
 
 ### How the web works
 
@@ -170,6 +208,16 @@ their development environment as early as possible.
 > Please. Windows users, download Git and use the Git bash than windows command
 line.
 
+> Mac users, do `brew install git`
+
+To test if Git is installed.
+
+```
+# rcliao @ Erics-MacBook-Pro in ~ [23:08:33]
+$ git --version
+git version 2.13.0
+```
+
 ### Text Editor
 
 * [VS Code](https://code.visualstudio.com/)
@@ -189,13 +237,60 @@ https://github.com/csula/Utilities/blob/master/setups/java-gradle-setup.md
 
 > Seriously though, use whatever IDE you want.
 
+Test if Java is installed
+
+```
+# rcliao @ Erics-MacBook-Pro in ~ [23:10:54] C:1
+$ java -version
+java version "1.8.0_112"
+Java(TM) SE Runtime Environment (build 1.8.0_112-b16)
+Java HotSpot(TM) 64-Bit Server VM (build 25.112-b16, mixed mode)
+```
+
 ## Basic HTML & CSS
 
 ### DOM
 
+DOM stands for document object model. DOM is a programming interface for HTML
+and XML. DOM provides structured representation of the document in browser as
+well as many functionalities for developers (e.g. change content & style).
+
+We will cover more of what DOM can do when we dive into JavaScript section.
+
+Meanwhile, you may read this document to get a head start ... 
+https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction
+
 ### DOM Tree
 
+In browser, DOM formulates a tree structure starting as the `document` as the 
+root and head and body as the first child. See example below:
+
+```html
+<html>
+	<head>
+		<title>Test</title>
+	</head>
+	<body>
+		<h1>Hello world!</h1>
+	</body>
+</html>
+```
+
+![DOM Tree example](imgs/dom-tree.png)
+
 ### Selector
+
+Selectors allows developers to locate DOM within the DOM tree. In example, if
+we want to find the `h1` element in the DOM tree above, we may do the selector
+below:
+
+```html
+html > body > h1 {
+	color: red;
+}
+```
+
+We will cover more on the selectors when we start the html & CSS section next week
 
 ## Basic Components
 
@@ -269,6 +364,19 @@ input {
 ```html
 <img src="image.png" />
 ```
+
+## Exercise (practice lab)
+
+In the remain section, we will practice with the HTML and CSS we did earlier
+and push changes to Github pages.
+
+Please click on this link to create your student repository:
+
+https://classroom.github.com/assignment-invitations/2f6346dbfa2062c422938b850dc2eac0
+
+And here is the exercise 1 link:
+
+[Exercise 1](../exercises/exercise.md)
 
 [1]:https://github.com/kamranahmedse/developer-roadmap
 [2]:https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol
