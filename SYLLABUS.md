@@ -29,7 +29,7 @@ how to implement techniques learned in class.
 * JSP (Java Servlet Page) & JSTL
 * MySQL
 * Vue.js
-* Spring Boot
+* Java Jersey framework
 
 ## Grading Allocation
 
@@ -50,6 +50,29 @@ how to implement techniques learned in class.
 * C+: 74 to 76
 * C: 70 to 73
 **Undergraduate students are required to obtain a grade 70 or above to pass the course**
+
+## Lab rules
+
+In lab, everything is open (books, notes, internet, friends, colleagues). In other word,
+you are free to ask for helps in order to finish the lab in time.
+
+There is only one rule to the lab -- all lab works are due in class unless notify otherwise.
+All the requirements to the lab will be given in class, and lab work will be due by the end
+of class.
+
+## Midterm/final rules
+
+Rules for midterm & final are very similar to lab --
+
+* Open book/note
+* Open internet
+* All works are due in class
+* You may ask question to clarify if you are not clear what question is
+
+Except the following difference:
+
+* No discussion/IMs with your friends&colleagues
+* Not like lab, I will noe be helping you out in midterm&final
 
 ## ADA Statement
 
