@@ -177,11 +177,16 @@ To make a commit and push changes, open Git bash:
 
 ```sh
 # Add all changes
-git add *
+git add .
 
 # Commit changes
-git commit
+git commit -m "{Describe your changes}"
 # should bring up a vim editor for you to enter text editor
 
 git push
 ```
+
+Once you pushes all your changes to Github repository. Then, you 
+can go ahead and configure out your own Github settings.
+
+![Github pages settings](imgs/github-pages-settings.png)
