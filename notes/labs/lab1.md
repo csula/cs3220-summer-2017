@@ -8,7 +8,6 @@
 	* Footer
 * Statuses.html
 * Menu.html
-* Recipes.html
 * app.css
 	* Styles used for the pages
 * Pushes changes to Github pages
@@ -24,9 +23,9 @@ In addition to create all these pages, we also need to ensure the navigation
 between pages is done correctly and therefore, it is important for you to
 create a navigation bar in header.
 
-> Please note that even though we have learned the existence of CSS framework 
-like Material or Bootstrap. Please refrain yourself from using it for the sake 
-of this lab (testing your HTML & CSS knowledge).
+> Please note that although we have learned the existence of CSS framework 
+like Material or Bootstrap in class earlier, refrain yourself from using it for
+the sake of this lab (testing your HTML & CSS knowledge).
 
 > In other word, you are **not** allowed to use those framework in this lab.
 
@@ -54,7 +53,7 @@ and paste into the main content area. It's like a layout definition.
 Food menu needs to display a couple informations:
 
 * A list of food on menu
-	* At least three food needs to be displayed here
+	* At least three food items need to be displayed
 * Food order form
 * Confirmation on the order
 * Should also have the same header/footer/navigation from the index.html
@@ -62,7 +61,7 @@ Food menu needs to display a couple informations:
 
 ### Statuses.html
 
-Order statuses page need to show customer what is their order statuses. You will
+Order statuses page needs to show customer what is their order statuses. You will
 need to show the following information:
 
 * A list of customer orders
