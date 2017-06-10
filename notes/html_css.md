@@ -714,6 +714,15 @@ The amount of specificity a selector has is measured using four different values
 
 https://www.smashingmagazine.com/2007/07/css-specificity-things-you-should-know/
 
+In theory, you can specify everything as `!important` to make sure your style is applied correctly. However, this isn't
+recommended at all for the sake of code maintenance. Why? Consider the following scenario: when you are styling the button,
+you realized some other developers specify the padding to be 16px with `!important` but your designer requires you to change
+this button and all other similar buttons to be 16px on the top and bottom and 8px on the left and right. You will also need
+to use `!important` to win the specificity, probably with more important class or id. When this war of specificity continues, your company CSS code becomes a nightmare to handle.
+
+Therefore, it is important for you to code CSS using as low CSS specificity as possible. So that in future, you can overwrite
+the current changes with ease.
+
 ### Box model
 
 * Padding
@@ -724,18 +733,38 @@ https://www.smashingmagazine.com/2007/07/css-specificity-things-you-should-know/
 
 ### Fonts
 
+Font plays quite a big rule on the web design. Font can be thought of the fundemental of web reading experience. Some even
+wrote that [90% of the web design is typography](http://informationarchitects.jp/the-web-is-all-about-typography-period/)!
+
+In additional to just text styles, font-size can also be used to change width, height, padding, margin (spacing in general).
+With good base font-size, you can style your website responsive using base font-size as a base variable to everything else.
+
 * Google font
 * Em as unit
 
 You can use Google fonts to find what font to import https://fonts.google.com/
 
+You can read more on the web design with fonts in https://www.smashingmagazine.com/2012/07/one-more-time-typography-is-the-foundation-of-web-design/
+
 ### CSS Layout
 
-* Float
 * Positioning
+* Float
 * Flexbox
 
-Learn flexbox here http://flexboxfroggy.com/
+Besides the spacing, it's common that developers need to position elements on the web in many different ways. In example, if
+you need a fab button showing at the bottom right corner of the web page. You might consider using `position: absolute;` or
+`position: relative;` to position this button properly.
+
+Besides positioning the button at certain point of the page, you will commonly need to make the certain element "floating".
+By floating, I meant aligning the element to be on the right or left. In this scenario, I want to show the image of the news
+article on the left of the article content. I will need to apply `float: left;` on the news image.
+
+Recently, web standard introduces "flexbox". This helps web developers to position the element even better and easier than
+floating and positioning. Take me for example, I only use flexbox now to position component elements (especially when I need
+to center certain element!).
+
+You can learn more on the flexbox from the following exercise: http://flexboxfroggy.com/
 
 ## Response design
 
@@ -745,10 +774,43 @@ https://css-tricks.com/why-ems/
 
 ## CSS Framework
 
+In industry, time to develop is a big factor to consider when creating an application. Thus, it's common for the developer to
+choose CSS framework when developing prototype. What can CSS framework offer to you as developer?
+
+* Common element style like button, form
+* Common element functionality (like click on the button to open a modal)
+* Common theming (change the color to be slightly different than others)
+
+Most importantly, it reduces your time to develop CSS styling while keeping your application looks professional.
+
+Here are a couple CSS frameworks I've used in the past:
+
+* https://material.io/components/web/
 * https://semantic-ui.com/
 * http://getbootstrap.com/
-* https://material.io/components/web/
+
+After the first homework, you may start use any of the framework above. However, for learning HTML, CSS & JavaScript, please
+do not use any of the framework in Lab1, Lab2 and Homework 1.
 
 ## CSS Mythology
 
-* BEM
+So far, we learn how CSS works and how to use them in conjunction with HTML; however, we haven't learn any good pattern to 
+keep our code sane to read and use. I'm a big fan of code maintenance, so I want to also cover a good practice when naming
+your CSS selector and HTML component structure.
+
+We will start by the most common one, BEM (Block Element Modifier). There are a couple other mythologies aiming to reduce
+the CSS footprint. I pick BEM for the sake of its popularity.
+
+Without further due, BEM is as followed:
+
+* Block
+    * Standalone entity that is meaningful on its own (like component)
+    * Example: Card
+* Element
+    * A part of block that has no stand alone meaning (like element -- button) and is semantically tied to its block
+    * Example: button in the card or header in the card
+* Modifier
+    * A flag on a block or element. Use them to change appearance or behavior.
+    * Example: **primary** button, **sub**heading
+
+* BEM - http://getbem.com/
