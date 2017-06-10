@@ -86,6 +86,12 @@ ends up with the following styles:
 * Confirmation component
 * Customer order item
 
+Here is the basic UI starting point,
+
+![Restaurant homepage/statuses](restaurant-statuses.png)
+![Restaurant food menu](restaurant-menu.png)
+![Restaurant checkout form](restaurant-checkout.png)
+
 ## Instructions
 
 ### Set up
