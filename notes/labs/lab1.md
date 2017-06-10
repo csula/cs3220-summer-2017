@@ -88,9 +88,9 @@ ends up with the following styles:
 
 Here is the basic UI starting point,
 
-![Restaurant homepage/statuses](restaurant-statuses.png)
-![Restaurant food menu](restaurant-menu.png)
-![Restaurant checkout form](restaurant-checkout.png)
+![Restaurant homepage/statuses](imgs/restaurant-statuses.png)
+![Restaurant food menu](imgs/restaurant-menu.png)
+![Restaurant checkout form](imgs/restaurant-checkout.png)
 
 ## Instructions
 
