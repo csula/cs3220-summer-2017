@@ -14,7 +14,7 @@ Github workflow for class.
 
 ## Recording
 
-[![Github Recording](https://asciinema.org/a/0vis8x47iibnfgr93svbffhgmn.png)](https://asciinema.org/a/0vis8x47iibnfgr93svbffhgmn)
+[![Github commands in recording](https://asciinema.org/a/0vis8x47iibnfgr93svbffhgm.png)](https://asciinema.org/a/0vis8x47iibnfgr93svbffhgm)
 
 ## Set up
 
