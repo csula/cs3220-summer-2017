@@ -766,6 +766,13 @@ to center certain element!).
 
 You can learn more on the flexbox from the following exercise: http://flexboxfroggy.com/
 
+## Web Design
+
+A little bit about web design: we will not go over the web design aspects in this web development class. However, there
+are still something I'd love you to know as programmer:
+
+https://blog.prototypr.io/design-for-programmers-d38c56982cd0
+
 ## Response design
 
 Use `em` over `px` as unit
