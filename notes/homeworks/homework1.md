@@ -27,6 +27,10 @@ Continue where we left over from lab1 and lab2, we want a fully working
 front-end application that can do the food ordering as well as the admin
 control for the restaurant application.
 
+Sitemap can be found below:
+
+![Sitemap](../imgs/restaurant-sitemap.png)
+
 ## Requirements
 
 All buttons and forms on the page should be working with proper style. In
