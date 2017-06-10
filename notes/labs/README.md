@@ -12,6 +12,10 @@ workflow.
 Or you can simply follow the remaining section of this article to follow
 Github workflow for class.
 
+## Recording
+
+[![Github Recording](https://asciinema.org/a/0vis8x47iibnfgr93svbffhgmn.png)](https://asciinema.org/a/0vis8x47iibnfgr93svbffhgmn)
+
 ## Set up
 
 Before you start any lab, please always start from a new branch. To start
