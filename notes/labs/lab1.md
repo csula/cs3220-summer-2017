@@ -1,17 +1,34 @@
-# Lab 1
+# Lab 1 [5 pts]
 
 ## Deliverables
 
-* Index.html
+* Index.html [2pt]
 	* Navigation
 	* Header
 	* Footer
-* Statuses.html
-* Menu.html
-* app.css
+* Statuses.html [1pt]
+* Menu.html [1pt]
+* app.css [1pt]
 	* Styles used for the pages
 * Pushes changes to Github pages
-* CSNS file showing URL of Github pages
+* CSNS file showing URL of Github pages & Github pull request
+
+Example CSNS file format:
+
+```
+Application URL:
+https://csula-students.github.io/cs-3220-summer-2017-rcliao/
+
+Github Pull Request URL:
+https://github.com/csula-students/cs-3220-summer-2017-rcliao/pull/1
+```
+
+### Bonus [2pt]
+
+If your website is mobile friendly, you will get additional 2 points!
+
+Mobile friendly being it shows correct resolution on the mobile screen (if I
+access the site from my Android phone). And the navigation is also mobile friendly.
 
 ## Description
 
@@ -91,6 +108,9 @@ Here is the basic UI starting point,
 ![Restaurant homepage/statuses](../imgs/restaurant-statuses.png)
 ![Restaurant food menu](../imgs/restaurant-menu.png)
 ![Restaurant checkout form](../imgs/restaurant-checkout.png)
+
+> Although UI mockup is provided, students are welcome to come up with own
+design as long as all the requirements above are satisfied.
 
 ## Instructions
 
