@@ -161,4 +161,4 @@ including the following code snippet to begin with:
 </html>
 ```
 
-Now you are ready to start hacking!
+Happy hacking!
