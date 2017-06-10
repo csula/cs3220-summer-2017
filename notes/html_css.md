@@ -746,6 +746,24 @@ You can use Google fonts to find what font to import https://fonts.google.com/
 
 You can read more on the web design with fonts in https://www.smashingmagazine.com/2012/07/one-more-time-typography-is-the-foundation-of-web-design/
 
+#### Example typography styles
+
+```css
+body {
+	font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	line-height: 2em;
+	margin-bottom: 1em;
+}
+
+p {
+	line-height: 1.5em;
+	margin-bottom: 1em;
+}
+```
+
 ### CSS Layout
 
 * Positioning
@@ -821,3 +839,7 @@ Without further due, BEM is as followed:
     * Example: **primary** button, **sub**heading
 
 * BEM - http://getbem.com/
+
+## References:
+
+* List of CSS properties: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference
