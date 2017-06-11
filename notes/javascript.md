@@ -8,11 +8,34 @@
 * Callback/Promise
 * ES6
 * You may not need jQuery
-* Class toggle
+* Common JavaScript Usage
+	* Add event listener
+	* Class toggle
+* Component pattern
 
 ### Lab
 
-* Behavior of app
+* Behavior of restaurant application
+	* Shopping cart
+	* Table sorting
+
+## JavaScript Synytax
+
+## Callback/Promise
+
+## ES6 features
+
+## You may not need jQuery
+
+http://youmightnotneedjquery.com/
+
+## Common JavaScript usage
+
+### Add event listener
+
+### Class toggle
+
+## Component Pattern
 
 ## Resources
 
