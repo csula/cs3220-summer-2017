@@ -28,12 +28,12 @@ nowadays due to the raise of [Node.js](https://nodejs.org/en/) community.
 
 In this lecture, we will learn JS in the context of browser and not Node.js
 development. In browser, you can use JS to do many different things. These
-includes creating carousel, response to button click, changing layout. More
+includes creating carousel, button click event, changing layout. More
 advance usage includes creating browser games, animated 2D and 3D graphics.
 
 Many people start learning JavaScript by using one of the third party libraries
 or start by using JavaScript API in browser. Since this lecture is supposed to
-be introduction to JavaScript. We will not confuse you by starting using API
+be introduction to JavaScript, we will not confuse you by starting using API
 nor libraries but learning plain JavaScript.
 
 In other word, we will start by learning JavaScript syntax, data structure &
@@ -361,7 +361,7 @@ blocking asynchronous? One, and the most important one, is user browser will
 stop and prevent end user from doing anything. Do you have example like going
 to a site that appears to be super slow on button click. Your browser even is
 not responding to your mouse click when that happens. And yes, browser rendering
-engine and your JavaScript runtime is sharing the same thread. Thus, when your
+engine and your JavaScript runtime are sharing the same thread. Thus, when your
 application logic is blocking the rendering engine from doing anything. You
 are blocking user!
 
@@ -538,6 +538,24 @@ blockingFn(1)
     .then(blockingFn);
 ```
 
+### Summary
+
+ES6 is amazing step for the JavaScript as a programming language. Although ES6
+is amazing, you have to be aware that not all browser supports all functions for
+ES6 yet (looking at IE).
+
+Check http://caniuse.com website for the browser support:
+
+http://caniuse.com/#search=es6
+
+For the context of this class, feel free to use ES6 for homework and assignment;
+you can just assume end user (me) will only be using Chrome.
+
+For the production usage, you will need to learn how to use pre-builder to compile
+ES6 code down to ES5 compatible. A good starting point would be looking at BabelJS.
+
+Reference: https://babeljs.io/
+
 ## You may not need jQuery
 
 With above ES6 features, it's almost a guarantee that you don't need to use
@@ -553,11 +571,162 @@ hundred kb size to your bundle).
 
 ## Common JavaScript usage
 
+That should be enough to get you started with JavaScript. Lets talk about some
+of the most common operations with JavaScript in browser:
+
+* Adding event listener
+* Toggle class
+
 ### Add event listener
+
+Adding event listener is probably by far the most common operation in JavaScript.
+For example, if you want to react to a button click you can go with following:
+
+```js
+const btn = document.querySelector('#some_button');
+btn.addEventListener('click', () => {
+    alert('This event is responding to your button click');
+});
+```
 
 ### Class toggle
 
+Coming after reacting to adding event listener, toggling classes is second most
+common operation.
+
+```js
+function toggleBtnClass () {
+    const btn = document.querySelector('#btn')
+    btn.addEventListener('click', () => {
+            btn.classList.toggle('--state-success');
+        });
+}
+```
+
+Then, the remaining JavaScript logics all lives with your business logic (e.g.
+validation rules).
+
 ## Component Pattern
+
+So far we have learn enough about JavaScript as a language, lets learn something
+about component pattern!
+
+Component based architecture is very common in many modern JavaScript frameworks
+nowadays. This is true for AngularJS, React, Vue, Ember and so on. In this 
+lesson, we will not be using any of the framework to create component however.
+
+To focus our learning on JavaScript, we will be creating our own component
+pattern that (hopefully) can represent the real component as concept to students.
+
+### What is a component?
+
+Component has many different definition. We can start by a more common definition
+like below:
+
+> An individual software component is a software package, a web service, a 
+web resource, or a module that encapsulates a set of related functions (or data).
+
+In the UI world, instead of looking at the individual control (like button,
+input tag). We combine the related functionalities together to form an UI
+component.
+
+Furthermore, an UI component is a small, potentially re-usable set of logic,
+interface, behavior elements.
+
+### Example component
+
+```js
+class RGBSqaure {
+    /**
+     * Pass the dom element into the JavaScript class to attach event & data
+     */
+    constructor(root) {
+        this.root = root;
+        this.colors = ['r', 'g', 'b'];
+        this.colorIndex = -1; // no color
+        this.onClick = () => this._updateColor();
+        this.init();
+    }
+
+    // define its life cycle with init
+    init () {
+        this.root.addEventListener('click', this.onClick);
+    }
+
+    // on destroy, it should remove all the event listeners so it doesn't create
+    // memory leak
+    destroy () {
+        this.root.removeEventListener('click', this.onClick);
+    }
+
+    _updateColor () {
+        let oldClass = this.colorClass(this.colorIndex);
+        let newClass = this.colorClass(++this.colorIndex);
+        if (oldClass) {
+            this.root.classList.remove(oldClass);
+        }
+        this.root.classList.add(newClass);
+    }
+
+    colorClass (i) {
+        if (i < 0) {
+            return '';
+        }
+        return this.colors[i];
+    }
+}
+```
+
+Before we move onto detail, you might be thinking why go such long route for 
+defining this extra class? Everything can be done without the component class
+and just do usual JavaScript code.
+
+The problem of that approach is -- it tends to create spaghetti code. And it's
+a nightmare to maintain such code! Therefore, it is necessary for our sanity
+to follow some sort of pattern so our code becomes easier to maintain and refactor.
+
+### What if JavaScript need to do render?
+
+To render an HTML string from JavaScript, you can simply use the `innerHTML`
+attribute in the DOM. In example:
+
+```js
+class RandomList {
+    constructor(root) {
+        this.root = root;
+        this.list = [];
+        this.fillRandomValues();
+        this.init();
+    }
+
+    init () {
+        // using innerHTML with template string, you achieve a simple template
+        // rendering
+        this.root.innerHTML = `<ul>
+            ${this.getListItems()}
+        </ul>`
+    }
+
+    getListItems () {
+        return this.list.map(item => {
+            return `<li>${item}</li>`;
+        }).reduce((a, b) => {
+            return a + b;
+        }, '');
+    }
+
+    fillRandomValues () {
+        let size = this.randomNum();
+        for (var i = 0; i < size; i ++) {
+            this.list.push(this.randomNum());
+        }
+    }
+
+    randomNum () {
+        return Math.floor(Math.random() * 100);
+    }
+}
+```
 
 ## Resources
 
