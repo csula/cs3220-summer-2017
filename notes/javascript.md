@@ -6,7 +6,8 @@
 
 * JavaScript Intro
 * JavaScript syntax
-* Callback/Promise
+* Callback
+* Browser storage
 * ES6
 * You may not need jQuery
 * Common JavaScript Usage
@@ -170,6 +171,37 @@ if (1 === 2) {
 }
 ```
 
+You will notice in JavaScript, you are using "===" than "==" like other language.
+You can also do "==" in JavaScript but it's not recommended for most of time.
+"==" is the loose comparison. In example, the following will return true:
+
+```js
+1 == '1';
+true == 'true';
+null == undefined;
+```
+
+In other word, "==" will do the object conversion automatically. For most of the
+case, this conversion behavior is not ideal for the condition. Therefore, it is
+more recommended to do "===" than "==".
+
+### Loop
+
+In JavaScript, you can use the following to loop through items:
+
+```js
+var list = [1, 2, 3];
+
+for (var i = 0; i < list.length; i ++) {
+    console.log(list[i]);
+}
+
+// or use forEach function from Array
+list.forEach(function(item) {
+    console.log(item);
+});
+```
+
 ### Functions
 
 To declare a function in JavaScript, you simply use `function` keyword:
@@ -195,6 +227,40 @@ function multiply (a, b) {
 }
 
 multiply(2, 3); // return 6
+```
+
+### Array functions
+
+It's common to do operations on array. In JavaScript, there are some built-in
+array functions you may find familiar coming from functional programming background:
+
+```js
+var list = [1, 2, 3];
+
+// classic forEach, map, reduce, & filter functions
+// forEach can replace the usage of traditional for loop
+list.forEach(function(item) {
+    console.log(item);
+});
+
+// map is useful when you want to transform every item in array
+list.map(function(item) {
+    return item * 2;
+}).forEach(function(item) {
+    console.log(item); // should log out 2, 4, 6
+});
+
+// reduce is useful when you want to combine array into a single item
+list.reduce(function(accu, item) {
+    return accu + item;
+}, 0); // should return 6 because (1 + 2 + 3)
+
+// filter is useful when you want only certain items from array
+list.filter(function(item) {
+    return item > 1;
+}).forEach(function(item) {
+    console.log(item); // should only print 2, 3
+});
 ```
 
 ### Events
@@ -364,6 +430,35 @@ not responding to your mouse click when that happens. And yes, browser rendering
 engine and your JavaScript runtime are sharing the same thread. Thus, when your
 application logic is blocking the rendering engine from doing anything. You
 are blocking user!
+
+## Browser storage
+
+You can store certain amount of items using browser built-in storage. Find detail:
+https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API
+
+Browser storage like sessionStorage and localStorage is extremely simple key-value
+store. They store item using key and value. They are not as complex as relational
+database or noSQL database.
+
+The difference between sessionStorage and localStorage is session storage only
+exists through out the session. In other word, once user close the browser tab,
+they lose all the data. Where as the localStorage, you can store items in the
+item and user can close the browser tab and come back with the same data in
+the store.
+
+Example can be found below:
+
+```js
+// to store an item under sessionStorage
+window.sessionStorage.setItem('key', 'value');
+
+// to retrieve an item from sessionStorage
+window.sessionStorage.getItem('key'); // should return 'value'
+
+// where localStorage is simply replace as localStorage
+window.localStorage.setItem('key', 'value');
+window.localStorage.getItem('key'); // should return 'value'
+```
 
 ## ES6 features
 
