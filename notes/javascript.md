@@ -19,6 +19,7 @@
 
 ### Lab
 
+* Link -- [lab2.md](labs/lab2.md)
 * Behavior of restaurant application (public facing)
 	* Shopping cart
 	* Table sorting
