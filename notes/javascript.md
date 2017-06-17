@@ -4,22 +4,22 @@
 
 ### Lecture
 
-* JavaScript Intro
-* JavaScript syntax
-* Callback
-* Browser storage
-* ES6
-* You may not need jQuery
-* Common JavaScript Usage
+* [JavaScript Intro](#javascript-intro)
+* [JavaScript syntax](#javascript-syntax)
+* [Callback](#callback)
+* [Browser storage](#browser-storage)
+* [EcmaScript 6 features](#es6-features)
+* [You may not need jQuery](#you-may-not-need-jquery)
+* [Common JavaScript Usage](#common-javascript-usage)
     * Query for DOM element
 	* Add event listener
 	* Class toggle
-* Component pattern
+* [Component pattern](#component-pattern)
     * Passing data from HTML to JavaScript
 
 ### Lab
 
-* Behavior of restaurant application
+* Behavior of restaurant application (public facing)
 	* Shopping cart
 	* Table sorting
 
