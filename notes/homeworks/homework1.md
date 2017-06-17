@@ -7,7 +7,7 @@
 * Inventory component
 * Menu component
 * Create food component
-* updated app.js
+* updated app.js with components above
 * Pushes changes to Github pages
 * CSNS file showing URL of Github pages & Github pull request
 
@@ -36,6 +36,11 @@ New pages needed on top of lab 1 and 2 can be found below:
 ![Inventory page](../imgs/restaurant-inventory.png)
 ![Create a new food](../imgs/restaurant-new-food.png)
 
+In regards of the component and its DOM element:
+
+![Inventory component](../imgs/homework-1-inventory.png)
+![Create Food component](../imgs/homework-1-create-food.png)
+
 ## Requirements
 
 All buttons and forms on the page should be working with proper style. In
@@ -54,4 +59,63 @@ In detail:
 
 ## Instructions
 
+Code explains better than any instruction!
 
+```js
+class Inventory {
+    constructor(root, store) {
+        this.root = root;
+        this.store = store;
+        this.init();
+    }
+
+    init () {
+        this.render();
+    }
+
+    destroy () {
+
+    }
+
+    removeItem (item) {
+
+    }
+
+    render () {
+
+    }
+}
+
+class Menu {
+    constructor(root, store) {
+        this.root = root;
+        this.store = store;
+        this.init();
+    }
+
+    init () {
+        this.render();
+    }
+
+    render () {
+
+    }
+}
+
+class CreateFood {
+    constructor(root, store) {
+        this.root = root; // root should be the container of the form itself
+        this.store = store;
+        this.init();
+    }
+
+    init () {
+        // attach click event to create button
+    }
+
+    createFood () {
+        // will need to do querySelector to find out every single form element
+        // to get their values before creating a new food
+    }
+}
+```
