@@ -280,7 +280,7 @@ The most obvious one is "click" event like below:
 ```
 
 ```js
-document.querySelector('#click_me').onClick = function () {
+document.querySelector('#click_me').onclick = function () {
 	alert('Hello there');
 };
 document.querySelector('#click_me').addEventListener('click', function() {
@@ -298,6 +298,7 @@ on click.
 
 <style>
 	.rgb-square {
+		display: block;
 		background-color: #fff;
 		width: 2em;
 		height: 2em;
