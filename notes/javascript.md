@@ -11,6 +11,7 @@
 * ES6
 * You may not need jQuery
 * Common JavaScript Usage
+    * Query for DOM element
 	* Add event listener
 	* Class toggle
 * Component pattern
@@ -670,8 +671,23 @@ hundred kb size to your bundle).
 That should be enough to get you started with JavaScript. Lets talk about some
 of the most common operations with JavaScript in browser:
 
+* Query for DOM element
 * Adding event listener
 * Toggle class
+
+### Query for DOM element
+
+Using `querySelector` and `querySelectorAll`, JavaScript developers are able to
+find the exact DOM node(s) from document. In example:
+
+```js
+const specialNode = document.querySelector('#special'); // find an element with id of "special"
+const buttonWithBtnClass = document.querySelectorAll('.btn'); // find all elements with class of "btn"
+const buttons = document.querySelectorAll('button'); // find all elements with tag of "button"
+```
+
+> You will notice the query selector syntax is extremely close to the CSS selector.
+Please be familiar with CSS selector before using querySelector
 
 ### Add event listener
 
