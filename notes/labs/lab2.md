@@ -2,9 +2,15 @@
 
 ## Deliverables
 
-* Menu.html, checkout.html with cart & checkout component [3 pts]
-* Statuses.html, checkout.html with table component [2 pts]
+* Checkout button [2 pts]
+* Cart component [3 pts]
 * app.js
+
+### Bonus
+
+* Table including sorting [2 pts]
+
+> Please specify in the pull request description if you have done table sorting component.
 
 ## Description
 
