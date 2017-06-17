@@ -2,8 +2,8 @@
 
 ## Deliverables
 
-* Menu.html, checkout.html with cart & checkout component
-* Statuses.html, checkout.html with table component
+* Menu.html, checkout.html with cart & checkout component [3 pts]
+* Statuses.html, checkout.html with table component [2 pts]
 * app.js
 
 ## Description

@@ -866,4 +866,5 @@ https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes
 * [What the heck is JavaScript event loop anyway?](https://www.youtube.com/watch?v=fju9ii8YsGs)
 * [Eloquent JavaScript book](http://eloquentjavascript.net/)
 * [You don't know JS](https://github.com/getify/You-Dont-Know-JS)
+* [Event bubbling and delegation](https://teamtreehouse.com/library/event-bubbling-and-delegation)
 * https://developer.mozilla.org/en/docs/Web/JavaScript/EventLoop
