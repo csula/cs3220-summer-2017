@@ -2,12 +2,12 @@
 
 ## Deliverables
 
-* Index.html
-* Statuses.html
-* Menu.html
 * Create-food-item.html
 * Inventory.html
-* app.css
+* Inventory component
+* Menu component
+* Create food component
+* updated app.js
 * Pushes changes to Github pages
 * CSNS file showing URL of Github pages & Github pull request
 
@@ -31,6 +31,11 @@ Sitemap can be found below:
 
 ![Sitemap](../imgs/restaurant-sitemap.png)
 
+New pages needed on top of lab 1 and 2 can be found below:
+
+![Inventory page](../imgs/restaurant-inventory.png)
+![Create a new food](../imgs/restaurant-new-food.png)
+
 ## Requirements
 
 All buttons and forms on the page should be working with proper style. In
@@ -40,21 +45,13 @@ statuses.html.
 
 In detail:
 
-* User should be able to see dynamic statuses on homepage
-* User should be able to add item to cart from menu
-* User should be able to order item from the food order
-* User should be able to go to admin page to control order statuses
-* User should be able to create new food item from create-food-item
+* User should be able to create new food item from create-food-item form
 * User should be able to see inventory list
-* User should be able to add/remove/change inventory quantity
-* When order is changed, the inventory quantity should be automatically updated (subtracted to be exact)
+* User should be able to remove food item from inventory page
+* User should be able to see updated food menu after adding/removing food from inventory
 
-> Note that all the functionality (behavior) should be done in JavaScript, HTML & CSS
+> Note that all the functionality (behavior) should be done in JavaScript
 
 ## Instructions
 
-Please do continue from where you left over as lab 1 and 2. Continue finishing up the remain functionalities in those pages.
 
-### Get started
-
-See lab 1 and 2 for get started guide.
