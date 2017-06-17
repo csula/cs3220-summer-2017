@@ -14,6 +14,7 @@
 	* Add event listener
 	* Class toggle
 * Component pattern
+    * Passing data from HTML to JavaScript
 
 ### Lab
 
@@ -822,6 +823,24 @@ class RandomList {
     }
 }
 ```
+
+### Passing data from HTML to JavaScript
+
+There is also built-in HTML5 method to pass data from HTML value to JavaScript
+by `data-*` attribute. In example:
+
+```html
+<button id="special_button" data-name="Eric was here">Click me</button>
+```
+
+```js
+var btn = document.querySelector('#special_button')
+btn.addEventListener('click', () => {
+    alert(btn.dataset.name);
+});
+```
+
+https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes
 
 ## Resources
 

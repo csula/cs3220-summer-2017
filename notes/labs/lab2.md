@@ -2,7 +2,7 @@
 
 ## Deliverables
 
-* Menu.html, checkout.html with cart component
+* Menu.html, checkout.html with cart & checkout component
 * Statuses.html, checkout.html with table component
 * app.js
 
@@ -17,32 +17,37 @@ With shopping cart and data table added to our restaurant application, it should
 have some basic e-commerce functionalities -- allowing our customer to order
 food!
 
+Visual representation can be found below:
+
+![table visual attached](../imgs/lab2-table.png)
+![checkout visual attached](../imgs/lab2-checkout.png)
+![cart visual attached](../imgs/lab2-cart.png)
+
 ## Requirements
 
-Functional requirements wise, you will need to implement an app.js with following code:
+Functional requirements wise, you will need to implement an app.js starting 
+with following code:
 
-This is your entry point and the core "controller" that glue everything together.
-
-Starting point can be found below:
+> Many instructions is included below in the comment, please read them wisely
 
 ```js
-const CART_KEY = 'CART';
-const QUEUE_KEY = 'QUEUE';
-const FOODS_KEY = 'FOODS';
-
+// single state store
 class Store {
+    // these are the key name you can use in Store
+    const CART_KEY = 'CART';
+    const QUEUE_KEY = 'QUEUE';
+    const FOODS_KEY = 'FOODS';
+
     constructor (storage) {
         this.storage = storage; // assuming local storage will be passed in as storage
     }
 
     // you can get item by store.cartItems
     get cartItems () {
-        return this.storage.getItem('CART'); // for example
     }
 
     // to call setter, simply "assign" like store.cartItems = something
     set cartItems (cartItems) {
-
     }
 
     get queue () {
@@ -80,16 +85,15 @@ class Cart {
         // TODO: remove all the events attached from init
     }
 
-    // add an item to shopp cart
-    addItem (item) {
-        // TODO: logic to add item to cart
+    // remove an item from shopping cart
+    removeItem (item) {
+        // TODO: logic to remove an item from cart
+        // call render method when the item is removed to update view
         render();
     }
 
-    // remove an item from shopping cart
-    removeItem (item) {
-        // TODO: logic to remove item from cart
-        render();
+    placeOrder () {
+        // add item to statuses in store as status "in progress"
     }
 
     // render a list of item under root element
@@ -97,7 +101,28 @@ class Cart {
     }
 }
 
-class DataTable {
+class CheckoutButton {
+    constructor(root, store) {
+        this.root = root;
+        this.store = store;
+        this.init();
+    }
+
+    init () {
+
+    }
+
+    destroy () {
+
+    }
+
+    addItemToCart () {
+        // hint: you can use `dataset` to access data attributes
+        // See passing data from HTML to JavaScript from course note
+    }
+}
+
+class StatusTable {
     // take dom element into JavaScript class to attachment events
     constructor(root, store) {
         this.root = root;
@@ -106,7 +131,7 @@ class DataTable {
     }
 
     init () {
-        // attach all necessary events
+        // attach click event listener to table header row on each column
         render();
     }
 
@@ -115,6 +140,7 @@ class DataTable {
     }
 
     sort (columnName) {
+        // after sorting the array of statuses, re render item to update view
         render();
     }
 
@@ -129,56 +155,22 @@ class DataTable {
 // the end of document
 document.addEventListener('DOMContentLoaded', () => {
     // use querySelector to find the table element (preferably by id selector)
-    let table = document.querySelector('');
+    let statusTable = document.querySelector('');
     // use querySelector to find the cart element (preferably by id selector)
     let cart = document.querySelector('');
+    let checkoutButtons = document.querySelectorAll('');
 
     let store = new Store(window.localStorage);
     if (table) {
-        new Table(table, store);
+        new StatusTable(table, store);
     }
     if (cart) {
-        let cartComponent = new Table(cart, store);
+        new Cart(cart, store);
+    }
+    if (checkoutButtons && checkoutButtons.length) {
+        new CheckoutButton(checkoutButtons, store);
     }
 });
 ```
 
-## Instructions
 
-Please be familiar with component pattern before start coding. If you don't
-understand the component pattern. Please raise your hand and ask. I'm happy
-to explain!
-
-### Store
-
-Please be familiar with localStorage (key value store)
-
-### Shopping cart
-
-For shopping cart, your responsibility is to implement a few functions
-with browser storage (sessionStorage) so that you can carry over the
-data between different pages.
-
-First function being adding item to cart. In this function, you need to
-allow the JavaScript function to add item to the shopping cart. One business
-logic I want you to add here is -- identify same item added to cart and
-group them by quantity. This implies, if I add item "Hamburger" twice,
-I should see in "Hamburger" of quantity 2 instead of 2 Hamburger.
-
-Second function in the cart is to remove an item from cart.
-Use case is in checkout page, user may remove item before making purchase.
-
-Third function is to render this list of items using JavaScript under root DOM
-node. Going back to the example at the lecture of JavaScript, you can use
-`innerHTML` to render under the DOM node. This function then will take a list
-of purchased item and render them under the table.
-
-### Data table
-
-In data table, you only need to perform one core function, sorting. It's 
-important to know how to sort in JavaScript array!
-
-### App.js
-
-You will need to provide the correct querySelector to app.js to feed the right
-DOM element into Table and Cart component.
