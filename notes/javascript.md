@@ -853,6 +853,7 @@ by `data-*` attribute. In example:
 ```js
 var btn = document.querySelector('#special_button')
 btn.addEventListener('click', () => {
+    // with "dataset", you can easily access the "data-*" attribute value
     alert(btn.dataset.name);
 });
 ```
@@ -861,6 +862,8 @@ https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes
 
 ## Resources
 
-* https://www.youtube.com/watch?v=8aGhZQkoFbQ
-* https://www.youtube.com/watch?v=fju9ii8YsGs
+* [Learn JS in one video](https://www.youtube.com/watch?v=8aGhZQkoFbQ)
+* [What the heck is JavaScript event loop anyway?](https://www.youtube.com/watch?v=fju9ii8YsGs)
+* [Eloquent JavaScript book](http://eloquentjavascript.net/)
+* [You don't know JS](https://github.com/getify/You-Dont-Know-JS)
 * https://developer.mozilla.org/en/docs/Web/JavaScript/EventLoop
