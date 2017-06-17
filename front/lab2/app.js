@@ -67,9 +67,10 @@ class Cart {
 
     // render a list of item under root element
     render () {
+        console.log(this.store.cartItems);
         let tbody = this.root.querySelector('tbody');
         // using innerHTML to render a list of table row item under tbody
-        tbody.innerHTML = `<tr>
+        tbody.innerHTML = `<tr class="item">
             <td>test</td>
             <td>test</td>
             <td>test</td>
@@ -86,6 +87,7 @@ class CheckoutButton {
     }
 
     init () {
+        this.root.addEventListener('click', this.onClick);
     }
 
     destroy () {
@@ -96,6 +98,12 @@ class CheckoutButton {
         // See passing data from HTML to JavaScript from course note
         let cartItems = this.store.cartItems || [];
         // TODO: replace with actual item
+        console.log(this.root.dataset);
+        cartItems.push({
+            name: 'test'
+        });
+        console.log(cartItems);
+        this.store.cartItems = cartItems;
     }
 }
 
