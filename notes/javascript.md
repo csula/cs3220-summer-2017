@@ -298,6 +298,7 @@ on click.
 
 <style>
 	.rgb-square {
+		display: block;
 		background-color: #fff;
 		width: 2em;
 		height: 2em;
