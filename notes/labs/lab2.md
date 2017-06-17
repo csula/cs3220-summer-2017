@@ -3,13 +3,12 @@
 ## Deliverables
 
 * Menu.html, checkout.html with cart component
-* Statuses.html, checkout.html should have table.js ready
-* store.js
-* cart.js
-* table.js
+* Statuses.html, checkout.html with table component
 * app.js
 
 ## Description
+
+![Lab 2 architecture](../imgs/lab2-architecture.png)
 
 Using the component pattern learned in the lecture earlier, your job is
 to implement shopping cart as well as the data table functionalities.
@@ -20,27 +19,18 @@ food!
 
 ## Requirements
 
-Functional requirements wise, you will need to implement a few files:
+Functional requirements wise, you will need to implement an app.js with following code:
 
-* store.js
-* cart.js
-* table.js
-* app.js
+This is your entry point and the core "controller" that glue everything together.
 
-### store.js
-
-A storage module utilizing the localStorage taught in class. The responsibility of
-the store module is to store all the necessary data into localStorage. These includes:
-cart items, item queue statuses & food items.
-
-You may find the following code as starting point:
+Starting point can be found below:
 
 ```js
 const CART_KEY = 'CART';
 const QUEUE_KEY = 'QUEUE';
 const FOODS_KEY = 'FOODS';
 
-export class Store {
+class Store {
     constructor (storage) {
         this.storage = storage; // assuming local storage will be passed in as storage
     }
@@ -59,7 +49,7 @@ export class Store {
 
     }
 
-    set queue () {
+    set queue (queue) {
 
     }
 
@@ -67,19 +57,12 @@ export class Store {
 
     }
 
-    set foods () {
+    set foods (foods) {
 
     }
 }
-```
 
-### cart.js
-
-This is the cart module. In this module, you will need to implement the component
-pattern. Please use the following as the starting point:
-
-```js
-export class Cart {
+class Cart {
     // take dom element into JavaScript class to attachment events
     constructor(root, store) {
         this.root = root;
@@ -113,17 +96,8 @@ export class Cart {
     render () {
     }
 }
-```
 
-In carts, you will have to implement the details in above functions.
-
-### table.js
-
-This is the data table module, you will need to implement the basic sorting
-function in the data table. You can start from the following code:
-
-```js
-export class DataTable {
+class DataTable {
     // take dom element into JavaScript class to attachment events
     constructor(root, store) {
         this.root = root;
@@ -149,18 +123,6 @@ export class DataTable {
 
     }
 }
-```
-
-### app.js
-
-This is your entry point and the core "controller" that glue everything together.
-
-Starting point can be found below:
-
-```js
-import {Store} from 'store';
-import {Cart} from 'cart';
-import {Table} from 'table';
 
 // DOMContentLoaded event will allow us to run the following function when
 // everything is ready. Think of the following code will only be executed by
@@ -183,6 +145,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 ## Instructions
 
+Please be familiar with component pattern before start coding. If you don't
+understand the component pattern. Please raise your hand and ask. I'm happy
+to explain!
+
+### Store
+
+Please be familiar with localStorage (key value store)
+
 ### Shopping cart
 
 For shopping cart, your responsibility is to implement a few functions
@@ -204,3 +174,11 @@ node. Going back to the example at the lecture of JavaScript, you can use
 of purchased item and render them under the table.
 
 ### Data table
+
+In data table, you only need to perform one core function, sorting. It's 
+important to know how to sort in JavaScript array!
+
+### App.js
+
+You will need to provide the correct querySelector to app.js to feed the right
+DOM element into Table and Cart component.
