@@ -74,6 +74,7 @@ In detail:
 Code explains better than any instruction!
 
 ```js
+// continue from Lab2 with Store, CheckoutButton, Cart components
 class Inventory {
     constructor(root, store) {
         this.root = root;
