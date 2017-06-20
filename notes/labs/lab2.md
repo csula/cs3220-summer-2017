@@ -2,9 +2,15 @@
 
 ## Deliverables
 
-* Menu.html, checkout.html with cart & checkout component [3 pts]
-* Statuses.html, checkout.html with table component [2 pts]
+* Checkout button [2 pts]
+* Cart component [3 pts]
 * app.js
+
+### Bonus
+
+* Table including sorting [2 pts]
+
+> Please specify in the pull request description if you have done table sorting component.
 
 ## Description
 
@@ -33,37 +39,38 @@ with following code:
 ```js
 // single state store
 class Store {
-    // these are the key name you can use in Store
-    const CART_KEY = 'CART';
-    const QUEUE_KEY = 'QUEUE';
-    const FOODS_KEY = 'FOODS';
-
     constructor (storage) {
         this.storage = storage; // assuming local storage will be passed in as storage
+        // these are the key name you can use in Store
+        this.CART_KEY = 'CART';
+        this.QUEUE_KEY = 'QUEUE';
+        this.FOODS_KEY = 'FOODS';
     }
 
     // you can get item by store.cartItems
     get cartItems () {
+        return JSON.parse(this.storage.getItem(this.CART_KEY));
     }
 
     // to call setter, simply "assign" like store.cartItems = something
     set cartItems (cartItems) {
+        this.storage.setItem(this.CART_KEY, JSON.stringify(cartItems));
     }
 
     get queue () {
-
+        return JSON.parse(this.storage.getItem(this.QUEUE_KEY));
     }
 
     set queue (queue) {
-
+        this.storage.setItem(this.QUEUE_KEY, JSON.stringify(queue));
     }
 
     get foods () {
-
+        return JSON.parse(this.storage.getItem(this.FOODS_KEY));
     }
 
     set foods (foods) {
-
+        this.storage.setItem(this.FOODS_KEY, JSON.stringify(foods));
     }
 }
 
@@ -72,13 +79,14 @@ class Cart {
     constructor(root, store) {
         this.root = root;
         this.store = store;
-        init();
+        this.items = this.store.cartItems;
+        this.init();
     }
 
     init () {
         // Render a list of items under root element
-        render();
-        // TODO: attach all necessary events
+        this.render();
+        // TODO: attach remove cart items to rendered HTML
     }
 
     destroy () {
@@ -89,7 +97,7 @@ class Cart {
     removeItem (item) {
         // TODO: logic to remove an item from cart
         // call render method when the item is removed to update view
-        render();
+        this.render();
     }
 
     placeOrder () {
@@ -98,6 +106,14 @@ class Cart {
 
     // render a list of item under root element
     render () {
+        console.log(this.store.cartItems);
+        let tbody = this.root.querySelector('tbody');
+        // using innerHTML to render a list of table row item under tbody
+        tbody.innerHTML = `<tr class="item">
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+        <tr>`
     }
 }
 
@@ -105,20 +121,28 @@ class CheckoutButton {
     constructor(root, store) {
         this.root = root;
         this.store = store;
+        this.onClick = () => this.addItemToCart();
         this.init();
     }
 
     init () {
-
+        this.root.addEventListener('click', this.onClick);
     }
 
     destroy () {
-
     }
 
     addItemToCart () {
         // hint: you can use `dataset` to access data attributes
         // See passing data from HTML to JavaScript from course note
+        let cartItems = this.store.cartItems || [];
+        // TODO: replace with actual item
+        console.log(this.root.dataset);
+        cartItems.push({
+            name: 'test'
+        });
+        console.log(cartItems);
+        this.store.cartItems = cartItems;
     }
 }
 
@@ -155,20 +179,22 @@ class StatusTable {
 // the end of document
 document.addEventListener('DOMContentLoaded', () => {
     // use querySelector to find the table element (preferably by id selector)
-    let statusTable = document.querySelector('');
-    // use querySelector to find the cart element (preferably by id selector)
-    let cart = document.querySelector('');
-    let checkoutButtons = document.querySelectorAll('');
+    // let statusTable = document.querySelector('');
+    // // use querySelector to find the cart element (preferably by id selector)
+    let cart = document.querySelector('.cart-table');
+    let checkoutButtons = document.querySelectorAll('.checkout-button');
 
     let store = new Store(window.localStorage);
-    if (table) {
-        new StatusTable(table, store);
-    }
+    // if (table) {
+    //     new StatusTable(table, store);
+    // }
     if (cart) {
         new Cart(cart, store);
     }
     if (checkoutButtons && checkoutButtons.length) {
-        new CheckoutButton(checkoutButtons, store);
+        for (var i = 0; i < checkoutButtons.length; i ++) {
+            new CheckoutButton(checkoutButtons[i], store);
+        }
     }
 });
 ```
