@@ -72,10 +72,15 @@ class Cart {
         // using innerHTML to render a list of table row item under tbody
         tbody.innerHTML = this.renderListAsHTML(this.store.cartItems)
         let deleteButtons = this.root.querySelectorAll('.delete-button');
+        let fakeList = [{name: 'test', price: 9.99}, {name: 'test2', price: 9.59}];
         for (var i = 0; i < deleteButtons.length; i ++) {
         	let deleteBtn = deleteButtons[i];
+        	let scopedFakeList = fakeList;
 			deleteBtn.addEventListener('click', () => {
         		debugger;
+        		// splice takes two arguments first being the index, second being
+        		// the number of items removing
+        		scopedFakeList.splice(0, 1);
 				alert('You are deleting' + deleteBtn);
 			});
         }
