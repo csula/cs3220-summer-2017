@@ -70,12 +70,42 @@ class Cart {
         console.log(this.store.cartItems);
         let tbody = this.root.querySelector('tbody');
         // using innerHTML to render a list of table row item under tbody
-        tbody.innerHTML = `<tr class="item">
-            <td>test</td>
-            <td>test</td>
-            <td>test</td>
-        <tr>`
+        tbody.innerHTML = this.renderListAsHTML(this.store.cartItems)
+        let deleteButtons = this.root.querySelectorAll('.delete-button');
+        for (var i = 0; i < deleteButtons.length; i ++) {
+        	let deleteBtn = deleteButtons[i];
+			deleteBtn.addEventListener('click', () => {
+        		debugger;
+				alert('You are deleting' + deleteBtn);
+			});
+        }
     }
+
+	/*
+	 * Input is a list of cart items (that were added through checkout button)
+	 *
+	 * Output is a String (which is HTML itself)
+	 */
+    renderListAsHTML(list) {
+		// replace with the for loop
+		let result = '<tr><td>Name</td><td>Price</td><td><button class="delete-button" data-id="0">Delete</button></td></tr>';
+		return result;
+    }
+    /**
+     * Class CartItem {
+     *   String name;
+     *   double price;
+     * }
+     *
+     * public String rednerListAsHTML(List<CartItem> list) {
+     *   // loop through the list and add it to single string
+     *   String result = "";
+     *   for (int i = 0; i < list.size(); i ++) {
+     *     result += list.get(i).name + "-" + this.get(i).price;
+     *   }
+     *   return result;
+     * }
+     */
 }
 
 class CheckoutButton {
@@ -139,11 +169,15 @@ class StatusTable {
 // everything is ready. Think of the following code will only be executed by
 // the end of document
 document.addEventListener('DOMContentLoaded', () => {
+	console.log('This is the starting point');
     // use querySelector to find the table element (preferably by id selector)
     // let statusTable = document.querySelector('');
     // // use querySelector to find the cart element (preferably by id selector)
     let cart = document.querySelector('.cart-table');
     let checkoutButtons = document.querySelectorAll('.checkout-button');
+
+    console.log(cart);
+    console.log(checkoutButtons);
 
     let store = new Store(window.localStorage);
     // if (table) {
@@ -158,3 +192,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
