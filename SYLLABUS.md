@@ -103,13 +103,13 @@ The schedule below is tentative and is subject to change.
 | 1  [06/03]         | [Introduction][1] | Set up environment |
 | 2  [06/10]         | [HTML & CSS][2] | [Lab 1][16] |
 | 3  [06/17]         | [Intro to JavaScript][3] | [Lab 2][17] |
-| 4  [06/24]         | [Java Servlet][4] | [Lab 3][18], [Homework 1][12] |
-| 5  [07/01]         | [Midterm][5] |  |
-| 6  [07/08]         | [JSP & JSTL][6] | [Lab 4][19], [Homework 2][13] |
-| 7  [07/15]         | [Database][7] | [Lab 5][20] |
-| 8  [07/22]         | [Web architectures][8] | (No in class room meeting) [Lab 6][21], [Homework 3][14] |
-| 9  [07/29]         | [Front end framework][9] | [Lab 7][22] |
-| 10 [08/05]         | [Modern Java Web framework][10] | [Lab 8][23], [Homework 4][15] |
+| 4  [06/24]         | [Intro to JavaScript][3], [Java Servlet][4] | [Lab 3][18] |
+| 5  [07/01]         | [Midterm][5] | [Homework 1][12] |
+| 6  [07/08]         | [JSP & JSTL][6] | [Lab 4][19] |
+| 7  [07/15]         | [JSP & JSTL][6] | (No in class room meeting) [Homework 2][13] |
+| 8  [07/22]         | [Database][7] | [Lab 5][20], [Homework 3][14] |
+| 9  [07/29]         | [Web architectures][8] | [Lab 6][21] |
+| 10 [08/05]         | [Modern Java Web framework][10] | [Lab 7][22], [Homework 4][15] |
 | Final [08/12]      | [Final][11] | Similar to lab, due in class |
 
 [1]: notes/introduction.md
