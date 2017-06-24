@@ -109,7 +109,7 @@ The schedule below is tentative and is subject to change.
 | 7  [07/15]         | [JSP & JSTL][6] | (No in class room meeting) [Homework 2][13] |
 | 8  [07/22]         | [Database][7] | [Lab 5][20], [Homework 3][14] |
 | 9  [07/29]         | [Web architectures][8] | [Lab 6][21] |
-| 10 [08/05]         | [Modern Java Web framework][10] | [Lab 7][22], [Homework 4][15] |
+| 10 [08/05]         | [Modern Java Web framework][10] | [Lab 8][22], [Homework 4][15] |
 | Final [08/12]      | [Final][11] | Similar to lab, due in class |
 
 [1]: notes/introduction.md
