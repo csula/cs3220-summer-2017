@@ -1,5 +1,12 @@
 # Homework 2
 
-Nothing to see here.
+## Deliverables
 
-Come back at 06/17 to see the detail.
+* FoodItem.java
+* MenuServlet.java
+* OrderServlet.java
+* StatusesServlet.java
+
+## Descriptions
+
+## Instructions

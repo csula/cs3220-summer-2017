@@ -112,6 +112,9 @@ The schedule below is tentative and is subject to change.
 | 10 [08/05]         | [Modern Java Web framework][10] | [Lab 8][22], [Homework 4][15] |
 | Final [08/12]      | [Final][11] | Similar to lab, due in class |
 
+> [Lab 8][23] will be a make up lab so you can choose one of the worst lab you
+have done before and work on it so I will re-grade it again.
+
 [1]: notes/introduction.md
 [2]: notes/html_css.md
 [3]: notes/javascript.md
