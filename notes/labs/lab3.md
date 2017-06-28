@@ -91,10 +91,10 @@ That is, you will need at least 4 Servlets:
 
 | Servlet Name | URL Patterns |
 | :--          | :--          |
-| CreateFoodServlet.java | /admin/foods/create |
+| CreateFoodAdminServlet.java | /admin/foods/create |
 | FoodItemListAdminServlet.java | /admin/foods/ |
-| EditFoodServlet.java | /admin/foods/edit/:id |
-| FoodMenu.java | /menu |
+| EditFoodAdminServlet.java | /admin/foods/edit/:id |
+| FoodMenuServlet.java | /menu |
 
 > If you found, at any point not sure what to do. Please find GuestBook Servlet
 as reference.
