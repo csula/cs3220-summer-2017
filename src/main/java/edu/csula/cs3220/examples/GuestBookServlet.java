@@ -36,7 +36,8 @@ public class GuestBookServlet extends HttpServlet {
 				"<tr>" + 
 					"<td>" + entry.getName() + " says: </td>" + 
 					"<td>" + entry.getComment() + "</td>" +
-					"<td><a href='guestbook/edit/" + entry.getId() + "'>Edit</a> <a href='guestbook/delete'>Delete</a></td>" +
+					"<td><a href='guestbook/edit?id=" + entry.getId() + "'>Edit</a> " + 
+					"<a href='guestbook/delete?id=" + entry.getId() + "'>Delete</a></td>" +
 				"</tr>"
 			);
 		}
