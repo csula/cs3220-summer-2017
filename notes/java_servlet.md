@@ -133,7 +133,7 @@ Notice that you can use wild card `*` in the Servlet mapping. e.g.
 	* Dispatch to `doXxx()` e.g. `doGet()`
 When servlet is unloaded -- `destroy()`
 
-**Why use `init()` instread of constructor
+**Why use `init()` instread of constructor**
 
 https://csns.calstatela.edu/wiki/content/cysun/notes/servlet_data_init
 
@@ -400,6 +400,118 @@ using hidden form field)
 
 * Use an unique and immutable identifier instead of array index
 
+### Generating Responses
+
+You will notice we put HTML directly into the **response body**. There many more
+things you can do with HTTP response:
+
+* Response status
+* Modifying response header
+* Response body
+
+#### General status code:
+
+1\*\*, Hold on
+2\*\*, Here you go
+3\*\*, Go away
+4\*\*, You f\*\*\*ed up
+5\*\*, I f\*\*\*ed up
+
+In example, by default without specifying, Java will return Http Status code 200 (OK).
+
+There are also common ones like below:
+
+* 401 (Unauthorized)
+* 403 (Forbidden)
+* 404 (Not found)
+* 500 (Internal Server Error)
+
+#### Why is response code useful?
+
+Sometimes when you are communicating to the server, your request may need to go
+through a series of validation process. Lets simplify the general process into:
+
+* Parse request
+* Validate request params
+* Transaction
+* Modifying response
+
+You can return 200 by the end if everything goes alright. But if there is something
+wrong, you will need to tell your client on what is wrong. Http status code is
+extremely useful for this purpose. For instance, you can say the request is not
+validated by http status code 400 (bad request) with explanation in the response
+body.
+
+#### About redirects
+
+* 301 (Move permanently)
+* 302 (Move temporarily)
+* 303 (See other)
+* 307 (temporary redirect)
+
+> Please note that the big difference between 301 and 302 is -- 301 will be cached
+by browser forever.
+
+Redirects usually goes with another header `Location` to indicate where the page
+is redirected to.
+
+#### Error pages in web.xml
+
+In additional to define the routing table, web.xml can also tell tomcat to display
+special error page based on the http status code.
+
+In example:
+
+```xml
+<error-page>
+    <error-code>404</error-code>
+    <location>/WEB-INF/404.html</location>
+</error-page>
+
+<error-page>
+    <error-code>403</error-code>
+    <location>/WEB-INF/403.html</location>
+</error-page>
+```
+
+#### Header fields
+
+* Request
+	* Accept
+	* Accept-Charset
+	* Accept-Encoding
+	* Accept-Language
+	* Connection
+	* Content-Length
+	* Cookies
+* Response
+	* Content-Type
+	* Content-Encoding
+	* Content-Language
+	* Connection
+	* Content-Length
+	* Set-Cookie
+
+#### HttpServletResponse
+
+http://download.oracle.com/javaee/7/api/javax/servlet/http/HttpServletResponse.html
+
+Methods
+
+* addHeader(), setHeader()
+* containsHeader()
+* setContentType(String type)
+* sendRedirect(String location)
+* getWriter()
+	* For text response, e.g. HTML page
+* getOutputStream()
+	* For binary responses, e.g. images
+
+#### Example Add revisited
+
+* Redirect the user back to the input form if the parameters are missing or invalid
+	* `sendRedirect()` method doesn't terminate the method
+
 ## Cookies Session
 
 ![Jetbrain cookie notification](https://puu.sh/lQYT8.png)
@@ -528,3 +640,10 @@ associated with the session
     <session-timeout>60</session-timeout>
 </session-config>
 ```
+
+### Recap on storage
+
+We have learned many storage types so far. Lets use graph to explain them:
+
+![Client server storage from high level](imgs/client-server-storage.png)
+
