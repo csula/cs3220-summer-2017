@@ -48,7 +48,6 @@ public class EditGuestBookServlet extends HttpServlet {
 		));
 		getServletContext().setAttribute("entries", entries);
 
-		PrintWriter out = response.getWriter();
-		out.println("<a href='/app/guestbook'>go back to guestbook</a>");
+		response.sendRedirect("../guestbook");
 	}
 }
