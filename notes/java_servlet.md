@@ -6,6 +6,7 @@
 
 * [Servlet](#servlet)
 * [Client/server](#client-server)
+* [Cookies and Session](#cookies-session)
 
 ### Lab
 
@@ -399,3 +400,131 @@ using hidden form field)
 
 * Use an unique and immutable identifier instead of array index
 
+## Cookies Session
+
+![Jetbrain cookie notification](https://puu.sh/lQYT8.png)
+
+You will see many notifications like above in regards of *Cookies* when you go
+to site for the first time.
+
+### What are this mysterious cookies?
+
+![Cookie monster](http://vignette1.wikia.nocookie.net/iannielli-legend/images/6/6e/Cookie_monster.jpg/revision/latest?cb=20150918140937)
+
+> No, not you. Not the actual cookie.
+
+> An HTTP cookie (also called web cookie, Internet cookie, browser cookie, or simply cookie)
+is a small piece of data sent from a website and stored on the user's computer
+by the user's web browser while the user is browsing.
+
+Reference: https://en.wikipedia.org/wiki/HTTP_cookie
+
+Basically, a set of data you can store based on the user request and hook it up
+to their browser.
+
+### Why do we need cookies?
+
+You might want to store personal related data on cookies. In example, their login
+status, personalization, shopping carts.
+
+### Challenge of session tracking
+
+The challenge to store such data in the application scope or database is you don't
+know which user/session it is coming from because HTTP by default is a "stateless"
+protocol. This means, from request to request, you have no way to tell which client
+it is sending from.
+
+So how do we tell this request is from user 1 but not user 2?
+
+We can have server to insert a "session id" on each request and response.
+
+![Http session general idea](imgs/http-session-idea.png)
+
+There are generally three way to implement session tracking:
+
+* URL Re-write
+	* e.g. http://csns.calstatela.edu/index.html;jsessionid=748D9512C9B19B0DCC9477696A88CF12
+* Hidden form fields
+	* `<input type="hidden" name="sessionid" value="12345" />"`
+* Cookies
+
+### Cookies
+
+Cookies is set by the web server as a response header `Set-Cookie`
+
+![Cookie request example](imgs/cookie-request-example.png)
+
+And then in each of subsequent request followed by browser as request header `Cookie`
+
+![Cookie request header example](imgs/cookie-request-header-example.png)
+
+### Cookie Attributes
+
+From here, you can think of cookie similar to the "application scope" we have done
+earlier. Or think of it as a small storage you can store a key-value pair per site
+per session.
+
+It has the following attributes that is interesting:
+
+* Name, value (key-value pair)
+* Host/Domain, Path
+	* Control whether cookie should be included in the request
+* Require secure connection
+* Max age
+* Comment
+
+You can see the cookie attributes from the API: http://docs.oracle.com/javaee/6/api/javax/servlet/http/Cookie.html
+
+In example, you can add cookie using `addCookie( cookie )` and get cookies by `getCookies()`
+from the HttpServletResponse.
+
+#### Example: Guestbook with cookies
+
+* Use a cookie to store name so a user only needs to enter their name once.
+
+### Concerns about cookies
+
+* Is cookie potentially a security concern?
+* What about privacy?
+
+### Known problems with cookies
+
+* Cookies have size limit
+* Malicious user can fake cookie (as they are coming from the request header)
+* Sometimes cookie is disabled in browser (which is why you see the notification all the time)
+* Cookie API is somewhat tedious to use
+
+### Servlet Session Tracking API
+
+* [HttpServletRequest#getSession](http://docs.oracle.com/javaee/6/api/javax/servlet/http/HttpServletRequest.html#getSession())
+* HttpSession: http://download.oracle.com/javaee/6/api/javax/servlet/http/HttpSession.html
+	* getAttribute( String )
+	* setAttribute( String, Object )
+	* invalidate()
+
+* Data is stored on the server, e.g. no size limit
+* Each session is assigned to a unique session id, which is used to access data
+associated with the session
+* Session id is randomly generated and hard to fake
+* Session tracking use cookie by default, but it can automatically switch to URL rewriting if cookie is disabled
+
+#### Example: Guestboook with session tracking API
+
+* Session is shared among servlets
+	* Servlet context attributes (application scope) vs session attribute (session scope)
+		* Similarities??
+		* Differences??
+		* Usage??
+
+### Session configuration in web.xml
+
+* Default session timeout in Tomcat is 30 minutes
+* Session timeout can be changed in web.xml
+	* The timeout value must be an integer
+	* Session never timeout if value <= 0
+
+```xml
+<session-config>
+    <session-timeout>60</session-timeout>
+</session-config>
+```
