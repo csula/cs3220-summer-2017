@@ -72,6 +72,7 @@ attributes:
 * Name
 * Description
 * Image URL
+* Price
 
 ### Necessary Servlets
 
