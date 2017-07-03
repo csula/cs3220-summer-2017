@@ -34,7 +34,7 @@ dependencies {
 
 gretty {
     httpPort = 8080
-    contextPath = '/app'
+    contextPath = '/'
 }
 
 // Javac related task to generate classpath for linter
@@ -51,3 +51,4 @@ task generateClasspath {
 		destFile.text = 'export CLASSPATH="' + classpathString + '"'
 	}
 }
+
