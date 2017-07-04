@@ -34,6 +34,7 @@ If you don't remember the mockup, this may be a refresher:
 ![Restaurant statuses](img/restaurant-statuses.png)
 ![Restaurant inventory](img/restaurant-inventory.png)
 ![Restaurant create food form](img/restaurant-new-food.png)
+![Restaurant inventory](img/restaurant-admin-statuses.png)
 
 ## Requirements
 
