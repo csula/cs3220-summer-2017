@@ -28,13 +28,13 @@ There are a couple pages we have been working through so far:
 
 If you don't remember the mockup, this may be a refresher:
 
-![Restaurant Sitemap](../img/restaurant-sitemap.png)
-![Restaurant menu](../img/restaurant-menu.png)
-![Restaurant order](../img/restaurant-checkout.png)
-![Restaurant statuses](../img/restaurant-statuses.png)
-![Restaurant inventory](../img/restaurant-inventory.png)
-![Restaurant create food form](../img/restaurant-new-food.png)
-![Restaurant inventory](../img/restaurant-admin-statuses.png)
+![Restaurant Sitemap](../imgs/restaurant-sitemap.png)
+![Restaurant menu](../imgs/restaurant-menu.png)
+![Restaurant order](../imgs/restaurant-checkout.png)
+![Restaurant statuses](../imgs/restaurant-statuses.png)
+![Restaurant inventory](../imgs/restaurant-inventory.png)
+![Restaurant create food form](../imgs/restaurant-new-food.png)
+![Restaurant inventory](../imgs/restaurant-admin-statuses.png)
 
 ## Requirements
 
