@@ -6,9 +6,6 @@
 * index.jsp (menu)
 * order.jsp
 * statuses.jsp
-* admin/inventory.jsp
-* admin/create-food.jsp
-* admin/order-statuses.jsp
 * app.css
 
 ## Description
