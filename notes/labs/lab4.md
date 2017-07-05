@@ -3,10 +3,13 @@
 ## Deliverables
 
 * Deploy to CS3 server
+* AdminHeader.java
+* admin-header.tld
 * admin/inventory.jsp
 * admin/create-food.jsp
 * admin/order-statuses.jsp
 * app.css
+* web.xml
 
 ## Descriptions
 
@@ -22,6 +25,25 @@ If you don't recall what those pages are, here is the refresher:
 ![Restaurant inventory](../imgs/restaurant-inventory.png)
 ![Restaurant create food form](../imgs/restaurant-new-food.png)
 ![Restaurant inventory](../imgs/restaurant-admin-statuses.png)
+
+In additional to the converting Java Servlet to JSP, you will also need to create
+an Admin header tag in JSTL. To do so, you will need to create an 
+`AdminHeader.java` and `admin-header.tld`.
+
+In this `AdminHeader.java`, you will need to put your header template into the
+JSTL output. There are a few parameter to take into consideration:
+
+* Header title
+
+And in the Java Servlet, you should be passing a list of navigation items into
+the request scope for the header template to pick up.
+
+Finally, to use the header template, you will need to register the template into
+web.xml and use it in each of the JSP above like:
+
+```jsp
+<cs3220:header title="{Restaurant name}" />
+```
 
 ## Requirements
 
