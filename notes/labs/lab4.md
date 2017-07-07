@@ -3,13 +3,11 @@
 ## Deliverables
 
 * Deploy to CS3 server
-* AdminHeader.java
-* admin-header.tld
-* admin/inventory.jsp
-* admin/create-food.jsp
-* admin/order-statuses.jsp
+* AdminHeader.java, admin-header.tld & web.xml [2 pts]
+* admin/inventory.jsp [1 pt]
+* admin/create-food.jsp [1 pt]
+* admin/order-statuses.jsp [1 pt]
 * app.css
-* web.xml
 
 ## Descriptions
 
