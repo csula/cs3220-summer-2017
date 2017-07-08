@@ -9,6 +9,10 @@
 * admin/order-statuses.jsp [1 pt]
 * app.css
 
+## Due date time
+
+### July 15th 23:59:59
+
 ## Descriptions
 
 Your job here is to refactor the existing restaurant application into using JSP/JSTL.

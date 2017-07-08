@@ -9,6 +9,10 @@
 * app.css [2 pts]
 * All requirements below must be met [2 pts]
 
+## Due date time
+
+### July 22nd 23:59:59
+
 ## Description
 
 Your job here is to continue refactoring the existing application using JSP/JSTL.
