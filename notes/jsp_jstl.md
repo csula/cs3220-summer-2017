@@ -151,7 +151,7 @@ In detail:
 
 ![MVC Example with addition](imgs/mvc-example.png)
 
-Check [CalServlet.java](../src/main/java/csula/cs3220/examples/CalServlet.java), [cal.jsp](../src/main/webapp/WEB-INF/cal.jsp) & [cal-result.jsp](../src/main/webapp/WEB-INF/cal-result.jsp) for concrete example
+Check [CalServlet.java](../src/main/java/edu/csula/cs3220/examples/CalServlet.java), [cal.jsp](../src/main/webapp/WEB-INF/cal.jsp) & [cal-result.jsp](../src/main/webapp/WEB-INF/cal-result.jsp) for concrete example
 
 Again, the web application is just data plus operations. To create this example,
 lets start by defining the data model classes. Although at this case, we don't
@@ -235,7 +235,7 @@ ${"double-quoted string"}, ${'single-quoted string'}
 ${null}
 ```
 
-Check [CalServlet.java](../src/main/java/csula/cs3220/examples/CalServlet.java), [cal.jsp](../src/main/webapp/WEB-INF/cal.jsp) & [cal-result.jsp](../src/main/webapp/WEB-INF/cal-result.jsp) for concrete example
+Check [CalServlet.java](../src/main/java/edu/csula/cs3220/examples/CalServlet.java), [cal.jsp](../src/main/webapp/WEB-INF/cal.jsp) & [cal-result.jsp](../src/main/webapp/WEB-INF/cal-result.jsp) for concrete example
 
 #### EL Variables
 
@@ -288,7 +288,7 @@ Then you can access properties from EL as followed:
 ${objectName.propertyName}
 ```
 
-Check [CalServlet.java](../src/main/java/csula/cs3220/examples/CalServlet.java), [cal.jsp](../src/main/webapp/WEB-INF/cal.jsp) & [cal-result.jsp](../src/main/webapp/WEB-INF/cal-result.jsp) for concrete example
+Check [CalServlet.java](../src/main/java/edu/csula/cs3220/examples/CalServlet.java), [cal.jsp](../src/main/webapp/WEB-INF/cal.jsp) & [cal-result.jsp](../src/main/webapp/WEB-INF/cal-result.jsp) for concrete example
 
 There are some implicit objects in EL within JSPs:
 
@@ -321,7 +321,7 @@ User of implicit objects:
 * Access elements in a collection
 	* cookie and param
 
-Check [CalServlet.java](../src/main/java/csula/cs3220/examples/CalServlet.java), [cal.jsp](../src/main/webapp/WEB-INF/cal.jsp) & [cal-result.jsp](../src/main/webapp/WEB-INF/cal-result.jsp) for concrete example
+Check [CalServlet.java](../src/main/java/edu/csula/cs3220/examples/CalServlet.java), [cal.jsp](../src/main/webapp/WEB-INF/cal.jsp) & [cal-result.jsp](../src/main/webapp/WEB-INF/cal-result.jsp) for concrete example
 
 #### EL Operators
 
