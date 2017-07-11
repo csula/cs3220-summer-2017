@@ -108,6 +108,8 @@ generated Java Servlet files
 </html>
 ```
 
+Check [request-counter.jsp](../src/main/webapp/request-counter.jsp) for concrete example
+
 ### Why JSP the old way is the wrong way?
 
 Mixing presentation and processing logic makes the program very hard to understand
@@ -148,6 +150,8 @@ In detail:
 ### Example using MVC
 
 ![MVC Example with addition](imgs/mvc-example.png)
+
+Check [CalServlet.java](../src/main/java/csula/cs3220/examples/CalServlet.java), [cal.jsp](../src/main/webapp/WEB-INF/cal.jsp) & [cal-result.jsp](../src/main/webapp/WEB-INF/cal-result.jsp) for concrete example
 
 Again, the web application is just data plus operations. To create this example,
 lets start by defining the data model classes. Although at this case, we don't
@@ -231,6 +235,8 @@ ${"double-quoted string"}, ${'single-quoted string'}
 ${null}
 ```
 
+Check [CalServlet.java](../src/main/java/csula/cs3220/examples/CalServlet.java), [cal.jsp](../src/main/webapp/WEB-INF/cal.jsp) & [cal-result.jsp](../src/main/webapp/WEB-INF/cal-result.jsp) for concrete example
+
 #### EL Variables
 
 You cannot declare a new variable using EL (After all, it's called expression language.)
@@ -282,6 +288,8 @@ Then you can access properties from EL as followed:
 ${objectName.propertyName}
 ```
 
+Check [CalServlet.java](../src/main/java/csula/cs3220/examples/CalServlet.java), [cal.jsp](../src/main/webapp/WEB-INF/cal.jsp) & [cal-result.jsp](../src/main/webapp/WEB-INF/cal-result.jsp) for concrete example
+
 There are some implicit objects in EL within JSPs:
 
 * pageContext
@@ -312,6 +320,8 @@ User of implicit objects:
 	* ${pageContext.request.remoteAddr}
 * Access elements in a collection
 	* cookie and param
+
+Check [CalServlet.java](../src/main/java/csula/cs3220/examples/CalServlet.java), [cal.jsp](../src/main/webapp/WEB-INF/cal.jsp) & [cal-result.jsp](../src/main/webapp/WEB-INF/cal-result.jsp) for concrete example
 
 #### EL Operators
 
@@ -396,6 +406,9 @@ You can use some custom tag in JSP as followed:
 <c:if test="${a.weekdays[0] == 'mon'}">Monday</c:if>
 ```
 
+Check [JSTLExampleServlet.java](../src/main/java/edu/csula/cs3220/examples/JSTLExampleServlet.java) & [jstl-example.jsp](../src/main/webapp/WEB-INF/jstl-example.jsp) for concrete example
+
+
 The type of the test attribute is boolean, which requires EL; "a.weekday[0] == 'mon'"
 would be just a string.
 
@@ -413,6 +426,8 @@ would be just a string.
 </c:choose>
 ```
 
+Check [JSTLExampleServlet.java](../src/main/java/edu/csula/cs3220/examples/JSTLExampleServlet.java) & [jstl-example.jsp](../src/main/webapp/WEB-INF/jstl-example.jsp) for concrete example
+
 #### Loop Tag `<c:forEach>`
 
 ```
@@ -422,6 +437,8 @@ would be just a string.
     </c:forEach>
 </ul>
 ```
+
+Check [JSTLExampleServlet.java](../src/main/java/edu/csula/cs3220/examples/JSTLExampleServlet.java) & [jstl-example.jsp](../src/main/webapp/WEB-INF/jstl-example.jsp) for concrete example
 
 > The type for items need to be a "Collection"
 
@@ -439,11 +456,15 @@ would be just a string.
 </ul>
 ```
 
+Check [JSTLExampleServlet.java](../src/main/java/edu/csula/cs3220/examples/JSTLExampleServlet.java) & [jstl-example.jsp](../src/main/webapp/WEB-INF/jstl-example.jsp) for concrete example
+
 #### URL Tag `<c:url>`
 
 ```
 <a href="<c:url value='/JSTLTest' />">A</a>
 ```
+
+Check [JSTLExampleServlet.java](../src/main/java/edu/csula/cs3220/examples/JSTLExampleServlet.java) & [jstl-example.jsp](../src/main/webapp/WEB-INF/jstl-example.jsp) for concrete example
 
 > For `<c:url>` tag, a URL starts with "/" is relative to the application root
 instead of the server root.
@@ -460,6 +481,8 @@ instead of the server root.
 <fmt:formatDate value="${a.date}"
         pattern="yyyy-M-d h:m:s a" />
 ```
+
+Check [JSTLExampleServlet.java](../src/main/java/edu/csula/cs3220/examples/JSTLExampleServlet.java) & [jstl-example.jsp](../src/main/webapp/WEB-INF/jstl-example.jsp) for concrete example
 
 > See http://download.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html
 for the date formatting patterns.
@@ -535,7 +558,7 @@ public class HelloTag extends SimpleTagSupport {
 To use it:
 
 ```
-<%@ taglib prefix="cs3220" uri="WEB-INF/custom.tld"%>
+<%@ taglib prefix="cs3220" uri="custom.tld"%>
 
 <html>
    <head>
@@ -547,6 +570,8 @@ To use it:
    </body>
 </html>
 ```
+
+Check [JSTLExampleServlet.java](../src/main/java/edu/csula/cs3220/examples/JSTLExampleServlet.java) & [jstl-example.jsp](../src/main/webapp/WEB-INF/jstl-example.jsp) for concrete example
 
 More examples to build `add` tag
 
@@ -616,6 +641,7 @@ public class AddTag extends SimpleTagSupport {
 		out.print( op1 + op2 );
 	}
 }
+```
 
 TaglibTest.jsp
 
@@ -632,3 +658,4 @@ TaglibTest.jsp
 </html>
 ```
 
+Check [JSTLExampleServlet.java](../src/main/java/edu/csula/cs3220/examples/JSTLExampleServlet.java) & [jstl-example.jsp](../src/main/webapp/WEB-INF/jstl-example.jsp) for concrete example
