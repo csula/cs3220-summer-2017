@@ -65,6 +65,8 @@ and <%= request.getParameter("b") %> is
 </html>
 ```
 
+Check [addition.jsp](../src/main/webapp/addition.jsp) for concrete example
+
 #### New way
 
 ```jsp
@@ -79,6 +81,8 @@ and <%= request.getParameter("b") %> is
 </body>
 </html>
 ```
+
+Check [addition_new.jsp](../src/main/webapp/addition_new.jsp) for concrete example
 
 ### How JSP works
 
