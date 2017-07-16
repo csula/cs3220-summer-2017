@@ -5,7 +5,7 @@
 ### Lecture
 
 * MySQL recap
-* Database Connector
+* JDBC
 * Database access object
 * Mock testing
 
@@ -214,3 +214,332 @@ DROP TABLE table_name:
 DROP TABLE IF EXISTS table_name;
 ```
 
+### Employees DBB
+
+#### employees
+
+| id | first_name | last_name | address | supervisor_id |
+| :-- | :-- | :-- | :-- | :-- |
+| 1 | John | Doe | Street #215 | null |
+| 2 | Jane | Doe | Street #711 | 1 |
+
+#### projects
+
+| id | name | leader_id |
+| :-- | :-- | :-- |
+| 1 | Firestone | 1 |
+| 2 | Blue | 2 |
+
+#### project_members
+
+| project_id | employee_id |
+| :-- | :-- |
+| 1 | 1 |
+| 2 | 1 |
+| 2 | 2 |
+
+### Examples: Single-table selection
+
+1. List the last names of the employees whoes ids are less than 10
+    * Remove duplicates
+    * Show results in alphabetical order
+2. Find the id of Jane Doe
+3. Find the names of the employees who do not have a supervisor
+    * Concatenate first name and last name
+
+### SQL Literals
+
+* Numbers: `10, 30.2`
+* String: `'CPU', 'John\'s Kitechen`
+* Date: `2007-06-01`
+* Time: `12:00:00`
+* Boolean: `1, 0, true, false`
+* `NULL`
+
+### SQL Operators
+
+* Arithmetic
+    * `+, -, *, /, %`
+* Comparison
+    * `<, >, <=, >=, =, <>`
+    * `between`
+* Logical
+    * `and, or, not`
+* String
+    * `like`
+* Other
+    * `is null`
+    * `in`
+    * `distinct`
+    * `order by`
+
+### Like
+
+Like is a simple pattern matching operator:
+    * `%`: to match any zero or more characters
+    * `_`: to match any **single** character
+
+### Common functions in Databases
+
+* Numerical functions
+* String functions
+* Date and time functions
+* NULL related functions
+* Aggregation functions
+
+> Please refers to https://dev.mysql.com/doc/refman/5.7/en/functions.html
+
+### Examples: Join
+
+4. List the employees who work on the project with id=1
+5. List the employees who work on the project "Blue"
+6. Find the name of Jane Doe's supervisor
+
+#### Cross Join
+
+* Aka. Cartesian Product
+* The results are all possiblbe combinations of the rows from table 1 with
+rows from table 2
+
+![Cross join example](imgs/datatbase-cross-join-example.png)
+
+#### Equi-Join
+
+* Cross join with additional conditions
+
+```sql
+SELECT ... FROM table_1, table_2 WHERE ... ... ...;
+```
+
+#### Inner join
+
+* Aka. the join
+* Combine two rows (one from each table) if they meet the join condition
+* In other words, the results include the matching rows from the two tables
+
+![Inner join example](imgs/database-inner-join-example.png)
+
+### Examples: Outer Join
+
+7. Find the employees who are not working on any project
+
+### Outer Joins
+
+* Include the results of an Inner Join and the unmatched rows from one or
+both join tables
+
+#### Left Outer Join
+
+* Aka. Left Join
+
+![Left Outer Join Example](imgs/database-left-outer-join-example.png)
+
+#### Right Outer Join
+
+* Aka. Right Join
+
+![Right Outer Join example](imgs/database-right-outer-join-example.png)
+
+#### Full Outer Join
+
+* Aka. Full Join
+
+![Full Join Example](imgs/database-full-join-example.png)
+
+### Example: Aggregation Functions
+
+8. Find the number of employees whoes last name is "Doe"
+
+### Aggregation Functions
+
+* Operate on multiple rows and return a single result
+    * `sum`
+    * `avg`
+    * `count`
+    * `max` and `min`
+
+> Please be careful with null value with above function.
+
+### Example: Aggregation Queries
+
+9. List the number of employees for each project
+    * Order the results by the number of the employees
+10. List the number of projects each employee works on
+
+### Understanding Group By
+
+* Without aggregation/Group By, you will see the result not grouped.
+
+#### How group works
+
+1. Calculate the results without aggregation/group by
+2. Divide the result rows into groups that share the same value in the grouping attribute(s)
+3. Apply the aggregation function(s) to the aggregation attribute(s) for
+each group
+
+### Even more SQL
+
+* Subquery
+* Set operations
+* Top N query
+* Transactions
+
+## JDBC
+
+JDBC is an interface that defines the SQL operations so that specific driver
+like MySQL can implement for DB specific functions.
+
+![JDBC interface and Java program](imgs/database-jdbc.png)
+
+* JDBC stands for Java DataBase Connectivity
+* JDBC API is DBMS indepedent
+* JDBC Driver implements JDBC API for a particular DBMS
+
+### Example: HelloJDBC.java
+
+* Load JDBC Driver
+* Make Connections
+* Execute queries
+* Process results
+* Handle exceptions (and close connections)
+
+### JDBC Basics
+
+* `import java.sql.*;`
+* Initialize driver
+    * Class.forName("com.mysql.jdbc.Driver")
+* Create connection
+    * URL
+        * `jdbc:mysql//[host:port]/[databbase][?user=cs3220xstu25&password=abcd]
+    * DriverManager.getConnection( URL )
+    * DriverManager.getConnection( URL, user, pass )
+* Create statement
+    * `Statement stmt = c.createStatement();`
+        * `stmt.executeQuery(String sql)`
+        * `stmt.executeUpdate(String sql)`
+* Get result back
+    * ResultSet
+
+> Refer to http://docs.oracle.com/javase/tutorial/jdbc/index.html
+
+### DB Query Results
+
+* In a program, we usually want to:
+    * Access each record
+    * Access each attribute in a record
+    * Access the name of each attribute
+
+### JDBC ResultSet -- Row Access
+
+Each record(cursor) is a row in the DBMS table.
+
+You can call `next()` method to move cursor one row down:
+    * Cursor starts before the first record
+    * `true` if the current record is valid
+    * `false` if there is no more records
+
+### Common code for processing ResultSet
+
+* Process each row: `while (rs.next()) { ... }`
+* Check whether a result set is empty: `if (rs.next()) { ... }`
+
+### JDBC ResultSet -- Column Access
+
+* Access the columns of current row
+* getXxx(String columnName) to get column value in Xxx type
+    * e.g. `getString("first_name")`
+* getXxx(int columnIndex) to get column value by the index
+    * columnIndex starts from 1
+    * e.g. getString(1)
+
+> Check http://docs.oracle.com/javase/7/docs/api/java/sql/ResultSet.html for more detail
+
+### JDBC ResultSet -- Access Column Names
+
+```java
+ResultSetMetaData meta = rs.getMetaData();
+```
+
+* ResultSetMetaData
+    * getColumnName( columnIndex )
+        * Column name
+    * getColumnLabel( columnIndex )
+        * Column title for display or printout
+
+### Handle Exceptions
+
+When opening JDBC connection, you will need to handle various exceptions (potential
+runtime errors such as SQL statement isn't valid or MySQL isn't there).
+
+```java
+catch (SQLException e) {
+    throw new ServletException( e ); // to have Servlet to display error stack (dev only)
+} finally {
+    try {
+        if (c != null) c.close();
+    } catch (SQLException e) {
+        throw new ServletException(e);
+    }
+}
+```
+
+### Example: GuestBook (JDBC) -- display
+
+* Create a "guest_book" table
+* Retrieve the entries in a Servlet
+* Display the entries in a JSP
+
+### Example: GuestBook (JDBC) -- add
+
+* Save a new guest book entries to the databbase
+    * `executeQuery()` vs `executeUpdate()`
+* Potential problems of handling user input
+    * Special characters
+    * SQL Injection Attack
+
+### Example: SQL Injection Attack
+
+* User input should never be trusted
+* Malicious user input
+    * Username: someuser
+    * Password: something' OR ' 1
+* Prevent SQL injection attack?
+    * User prepare statement
+
+### Prepared statements
+
+Prepared statements is statements with parameters.
+
+```java
+String sql = "INSERT INTO items VALUES (?, ?, ?)";
+
+PreparedStatement pstmt = c.prepareStatement(sql);
+
+pstmt.setString(1, "orange");
+pstmt.setBigDecimal(2, 0.59);
+pstmt.setInt(3, 4);
+
+pstmt.executeUpdate();
+```
+
+### Beyond basic
+
+* Transaction
+    * ACID property of database
+
+![Database Transaction flow](imgs/database-transaction-flow.png)
+
+It's rather expensive to open a db connection; in fact, we can keep connections
+open and reusabble through **connection pool**.
+
+Connection pool can define:
+
+* Max number of connections
+* Max number of idle connections
+* And many other configurable parameters
+
+> See http://tomcat.apache.org/tomcat-8.5-doc/jndi-datasource-examples-howto.html for more detail
+
+Besides connection pool, we also are doing a lot of conversion ourselves from
+ResultSet to our business object (plain old Java Class). There is a library
+to help us to map between ResultSet and Object through **Object-Relational Mapping** like Hibernate -- http://hibernate.org/orm
