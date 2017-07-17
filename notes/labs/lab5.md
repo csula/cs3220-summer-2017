@@ -47,6 +47,7 @@ using `INSERT INTO` statement like below:
 **Order foods**
 
 | OrderID | FoodID | Quantity |
+| :-- | :-- | :-- |
 | 1 | 1 | 1 |
 | 1 | 2 | 2 |
 | 2 | 2 | 2 |
@@ -58,6 +59,7 @@ using `INSERT INTO` statement like below:
 **Shopping Cart**
 
 | ID | Customer Name | FoodID | Quantity |
+| :-- | :-- | :-- | :-- |
 | 1 | Anonymous | 1 | 2 |
 | 1 | Anonymous | 2 | 1 |
 | 1 | Anonymous | 2 | 1 |
