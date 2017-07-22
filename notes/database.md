@@ -350,6 +350,8 @@ Like is a simple pattern matching operator:
 
 > Please refers to https://dev.mysql.com/doc/refman/5.7/en/functions.html
 
+> CS-1222 notes: https://github.com/csula/cs1222-fall-2016/blob/master/notes/sql-functions.md
+
 ### Examples: Join
 
 4. List the employees who work on the project with id=1
