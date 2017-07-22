@@ -107,8 +107,8 @@ The schedule below is tentative and is subject to change.
 | 5  [07/01]         | [Java Servlet][4] | [Lab 3][18], [Homework 1][12] |
 | 6  [07/08]         | [Midterm][5], [JSP & JSTL][6] | [Lab 4][19] |
 | 7  [07/15]         | [JSP & JSTL][6] | (No in class room meeting) |
-| 8  [07/22]         | [Database][7] | [Lab 5][20], [Homework 2][13], [Homework 3][14] |
-| 9  [07/29]         | [Database][7] | [Lab 6][21] |
+| 8  [07/22]         | [Database][7] | [Lab 5][20], [Homework 2][13] |
+| 9  [07/29]         | [Database][7] | [Lab 6][21], [Homework 3][14] |
 | 10 [08/05]         | [Modern Java Web framework][10] | [Lab 7][22], [Homework 4][15] |
 | Final [08/12]      | [Final][11] | Similar to lab, due in class |
 
