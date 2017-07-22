@@ -145,9 +145,11 @@ Very popular in web development due to few reasons:
 > A side note on MySQL runtime on CS3 server. It's using version 5.7. And you have
 one database per account.
 
-### Client-server architecture of MySQL
+### 
 
-![Database client and server architecture](imgs/database-terminology-table.png)
+-server architecture of MySQL
+
+![Database client and server architecture](imgs/database-client-server-architecture.png)
 
 ## MySQL Setup
 

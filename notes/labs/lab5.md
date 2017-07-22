@@ -78,6 +78,7 @@ Then you may proceed to the following requirements (starting from working on the
 * Insert default food items into food items table
 * Insert default order statuses into order statuses table
 * Update food item name from "Hamburger" to "Salad"
+* Update customer name from "Jane" to "Doe"
 * Find out which food item has the most orders
 * Find out which food item in least shopping carts
 * Find out all restaurant food items using `SELECT` query
