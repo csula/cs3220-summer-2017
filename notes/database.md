@@ -63,6 +63,13 @@
     * [Prepared statements](#prepared-statements)
     * [Beyond basic](#beyond-basic)
 
+### Resources
+
+* http://www.sohamkamani.com/blog/2016/07/07/a-beginners-guide-to-sql/
+* https://zeroturnaround.com/rebellabs/sql-cheat-sheet/
+* https://blog.codinghorror.com/a-visual-explanation-of-sql-joins/
+* http://www.tutorialspoint.com/sql/
+
 ### Lab
 
 * Set up MySQL
@@ -153,8 +160,8 @@ same username and password I gave to you earlier.
 ### Run SQL Scripts
 
 * Command line client:
-    * . path/to/script.sql
-    * source path/to/script.sql;
+    * `$ mysql -u username -p password databasename < path/to/script.sql`
+    * `mysql > source path/to/script.sql;`
 * MySQL Workbench
     * SQL Editor -> File -> Open SQL Script -> Execute
 
