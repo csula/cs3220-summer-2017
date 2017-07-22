@@ -3,11 +3,11 @@
 ## Deliverables
 
 * Deploy to CS3 server
-* AdminHeader.java, admin-header.tld & web.xml [2 pts]
+* AdminHeader.java, admin-header.tld & web.xml [1 pts]
 * admin/inventory.jsp [1 pt]
 * admin/create-food.jsp [1 pt]
 * admin/order-statuses.jsp [1 pt]
-* app.css
+* app.css [1 pt]
 
 ## Due date time
 
