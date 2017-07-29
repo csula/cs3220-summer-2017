@@ -27,6 +27,7 @@ public class HelloJDBC extends HttpServlet {
     public void init( ServletConfig config ) throws ServletException {
         super.init( config );
 
+        // load driver
         try {
             Class.forName( "com.mysql.jdbc.Driver" );
         } catch( ClassNotFoundException e ) {
@@ -46,9 +47,14 @@ public class HelloJDBC extends HttpServlet {
             String username = "root";
             String password = "";
 
+            // CS3 server example
+            // String url = "jdbc:mysql://localhost/cs3220xstu25";
+            // String username = "cs3220xstu25";
+            // String password = "password";
+
             c = DriverManager.getConnection( url, username, password );
             Statement stmt = c.createStatement();
-            ResultSet rs = stmt.executeQuery( "select * from employees" );
+            ResultSet rs = stmt.executeQuery( "SELECT * FROM employees" );
 
             while( rs.next() ) {
                 out.println( rs.getString( "id" ) );
