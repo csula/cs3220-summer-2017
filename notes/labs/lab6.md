@@ -17,7 +17,7 @@ https://github.com/csula-students/cs-3220-summer-2017-rcliao/pull/12
 
 ## Due date time
 
-### July 29th 16:00:00
+### July 30th 23:59:59
 
 ## Description
 
