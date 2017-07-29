@@ -475,7 +475,7 @@ like MySQL can implement for DB specific functions.
     * Class.forName("com.mysql.jdbc.Driver")
 * Create connection
     * URL
-        * `jdbc:mysql//[host:port]/[databbase][?user=cs3220xstu25&password=abcd]
+        * `jdbc:mysql//[host:port]/[databbase][?user=cs3220xstu25&password=abcd]`
     * DriverManager.getConnection( URL )
     * DriverManager.getConnection( URL, user, pass )
 * Create statement
