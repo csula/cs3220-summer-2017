@@ -1,6 +1,7 @@
 package edu.csula.cs3220.dao;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * DAO (Data Access Object) is common abstraction layer between business model
@@ -14,7 +15,7 @@ public interface DAO<T> {
     public List<T> list();
 
     // return single object given its id
-    public T get(int id);
+    public Optional<T> get(int id);
 
     // add item obj into database
     public void add(T obj);
