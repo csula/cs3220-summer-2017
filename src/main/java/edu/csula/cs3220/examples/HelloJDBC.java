@@ -20,13 +20,11 @@ public class HelloJDBC extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
-    public HelloJDBC()
-    {
+    public HelloJDBC() {
         super();
     }
 
-    public void init( ServletConfig config ) throws ServletException
-    {
+    public void init( ServletConfig config ) throws ServletException {
         super.init( config );
 
         try {
@@ -37,8 +35,7 @@ public class HelloJDBC extends HttpServlet {
     }
 
     protected void doGet( HttpServletRequest request,
-            HttpServletResponse response ) throws ServletException, IOException
-    {
+            HttpServletResponse response ) throws ServletException, IOException {
         PrintWriter out = response.getWriter();
         out.println( "<!DOCTYPE html>" );
         out.println( "<html><head><title>Hello JDBC</title></head><body>" );
@@ -77,5 +74,4 @@ public class HelloJDBC extends HttpServlet {
 
         out.print( "</body></html>" );
     }
-
 }
