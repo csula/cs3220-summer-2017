@@ -69,6 +69,7 @@
 * https://zeroturnaround.com/rebellabs/sql-cheat-sheet/
 * https://blog.codinghorror.com/a-visual-explanation-of-sql-joins/
 * http://www.tutorialspoint.com/sql/
+* https://gist.github.com/hofmannsven/9164408
 
 ### Lab
 
