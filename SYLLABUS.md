@@ -109,8 +109,8 @@ The schedule below is tentative and is subject to change.
 | 7  [07/15]         | [JSP & JSTL][6] | (No in class room meeting) |
 | 8  [07/22]         | [Database][7] | [Lab 5][20], [Homework 2][13] |
 | 9  [07/29]         | [Database][7] | [Lab 6][21], [Homework 3][14] |
-| 10 [08/05]         | [Modern Java Web framework][10] | [Lab 7][22], [Homework 4][15] |
-| Final [08/12]      | [Final][11] | Similar to lab, due in class |
+| 10 [08/05]         | [Modern Java Web framework][10] | [Lab 7][22] + [Extra Credit (See lab 7)][22], [Homework 4][15] |
+| Final [08/12]      | [Final][11] | [Lab 8][23], Similar to midterm, due in class |
 
 > [Lab 8][23] will be a make up lab so you can choose one of the worst lab you
 have done before and work on it so I will re-grade it again.
